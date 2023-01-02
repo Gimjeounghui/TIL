@@ -30,3 +30,7 @@ Day_3 : 2022-12-30
 int 필요 시 parseInt(), Integer wrapper 객체 필요 시 valueOf()
 
 논리적모델링 관계설정 및 해석
+
+Day_6 : 2023-01-02
+
+Notion으로 정리했던 JS 문서 통합작업 완료
