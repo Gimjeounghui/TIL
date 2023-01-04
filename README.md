@@ -45,3 +45,4 @@ JSP, SERVLET, JSP METHOD, JSP는 java파일을 생성
 Day_8 : 2023-01-04
 
 JSP 실행파일 생성 및 이클립스 구동
+설치가 왜 어렵지..?
