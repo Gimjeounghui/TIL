@@ -45,3 +45,9 @@ JSP, SERVLET, JSP METHOD, JSP는 java파일을 생성
 Day_8 : 2023-01-04
 
 JSP 실행파일 생성 및 이클립스 구동과 관련되어 정리가 필요하다.
+
+Day_9 : 2023-01-04
+
+JSP문서에서 Java를 작성하는 방법 
+jQUERY attr() & prop() 차이점 확인
+회원가입 페이지 유효성 체크 확인하기 # 코딩
