@@ -53,4 +53,7 @@ jQUERY attr() & prop() 차이점, replace(), 공백확인, radio와 check box �
 
 취미 선택한 값을 출력할 때 취미는 여러개 값을 가질 수 있으므로, each와 this를 활용하여 값을 받아올 수 있다.
 회원가입 페이지 유효성 체크 확인하기 #강사님 코드 확인
-AJAX
+AJAX(비동기식 데이터 처리), XML, HTML & XML 차이점
+JS 요소 접근방법 중 eq(n) : 요소의 n번쨰 index 요소를 반환
+HTML요소를 동적으로 생성하는 방법 
+HTML jQuery 동적 요소를 추가하고 마지막 합치는 작업을 위한 코드 복습!
