@@ -49,5 +49,5 @@ JSP 실행파일 생성 및 이클립스 구동과 관련되어 정리가 필요
 Day_9 : 2023-01-04
 
 JSP문서에서 Java를 작성하는 방법 
-jQUERY attr() & prop() 차이점 확인
+jQUERY attr() & prop() 차이점, replace(), 공백확인, radio와 check box 체크 시 is 활용(여부확인)
 회원가입 페이지 유효성 체크 확인하기 # 코딩
