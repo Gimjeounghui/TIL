@@ -117,3 +117,9 @@ Object의 inputStream과 outputStream으로 바이트 단위로 변환 가능
 단지, 직렬화를 위한 interface가 Serialiazble이다. 해당 인터페이스는 메서드가 없어 오버라이딩 할 게 없음
 
 web.xml은 프로젝트 생성에 영향을 주기 때문에 꼭 확인해야함!
+
+프로젝트 생성 시 context root가 프로젝트명과 동일할 뿐 실제 url에서 작성 시 context 명은 실제 저장 디렉토리명 src/main/webapp임을 잊지 말것
+
+web.xml은 import가 불가능하므로 full name으로 작성해야함
+servlet 주소를 줄 때 servlet과 servlet-mapping 두개가 필요함
+                                          ㄴ 브라우저로 요청할 주소 작성
