@@ -122,4 +122,33 @@ web.xml은 프로젝트 생성에 영향을 주기 때문에 꼭 확인해야함
 
 web.xml은 import가 불가능하므로 full name으로 작성해야함
 servlet 주소를 줄 때 servlet과 servlet-mapping 두개가 필요함
-                                          ㄴ 브라우저로 요청할 주소 작성
+                                          ㄴ 브라우저로 요청할 주소 작성(url-pattern))
+
+servlet에서 객체생성을 하지 않아도 실행이 되어짐 왜냐면 default 생성자가 호출
+servlet 컨테이너가 생성함
+
+IoC라는 개념 (Stringframework 시 매우중요)
+Inversion of Control
+인스턴스를 생성하는 주최가 개발자가 아닌 다른 제3자가 생성
+
+콜벡메서드
+
+직접적으로 주소값을 명시하는 방법 : get
+mapping하는 방법 : 1) annotation 2) xml파일 명시
+
+servlet은 반드시 default 생성자를 반드시 명시해줘야함!
+
+web.xml 설정하는 방법 중요중요!!
+mapping은 하나의 프로젝트에 중복될 수 없음!
+보통은 /로 시작함
+Servlet 2.5까지 사용했지만 대형 프로젝트에서는 어노테이션이 아닌 web.xml 방식사용
+
+servlet은 반드시 주솟값 설정해야함 이것을 mapping이라 하는데 방법은 2가지이다.
+1) 어노테이션
+2) web.xml파일
+
+오류번호 404 : 파일이 없거나(경로 잘못 주었을 때), mapping주소가 잘못 되었을 때
+
+Sevlet mapping하는 방법에 대해서 배웠다.
+
+doGet() & doPost()
