@@ -152,3 +152,27 @@ servlet은 반드시 주솟값 설정해야함 이것을 mapping이라 하는데
 Sevlet mapping하는 방법에 대해서 배웠다.
 
 doGet() & doPost()
+
+요청라인
+요청헤더
+요청바디
+
+URL에 전달하고자 하는 정보를 포함해서 정보를 전달하는 방법
+URL에서 ?를 만나면 method 방식 "get"
+form 내에 name을 작성해야 DB에서 데이터 전송
+
+GET으로 작성하면 URL에 포함해서 전송하겠다는 의미 (form태그, a태그, 브라우저에 직접 입력[url에 직접 입력])
+
+POST 방식은 하단에 데이터 영역이 따로 되어 있음
+post는 방식으로는 전송버튼을 만들 수 있음
+
+서버가 요청을 받을 때의 메서드 : Request.getParameter("name");
+String userName = request.getParameter("name");
+
+HttpServletRequest class의 주요 메서드
+1) getParameter(name) => 반환타입 : String
+2) getParameterValues(name) => 반환타입 : 배열
+3) getMethod()
+4) 
+
+HttpServletResponse
