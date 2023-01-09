@@ -77,3 +77,43 @@ parents() : 찾고자 하는 요소를 매개변수로 작성 가능!
 find() : 하위요소를 찾을 때  / 매개변수 작성 가능
 
 동적인 데이터에 이벤트를 추가할 때 .on("이벤트", "대상", 함수) 작성
+
+Day_13 : 2023-01-09
+
+jQuery가 지원하는 속성 data- : 반복되는 data를 처리하기 위한 속성
+- 뒤는 고정값이 아닌 식별하기 위한 값을 개발자가 직접 명시해야함
+중복된 코드를 함수화처리
+
+순서도의 마름모는 판단기호
+JSP문서 실행 시 객체가 없는 거라면 "최초실행"
+운영체제마다 확장자는 상이하지만 사용중인 WINDOW에서는 캡쳐참고
+항상 브라우저의 주소 확인하는 습관 들이기!(URL)
+
+Web.xml의 가장 중요한 건 웹 어플리케이션 서비스 시작 시 웹 서버가 읽어서 사용하는 파일
+
+Web.xml의 위치는 src > main > webapp > WEB-INF > Web.xml : 브라우저로 직접 
+ㄴ 요청이 불가능한 경로
+
+실제 운영될 때는 WEB-INF에서 class파일이 생성되어 실행되어짐 : 클라이언트가 요청했을 떄 실행되는 서비스 경로 
+D:\JSPCoding\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\firstExample\WEB-INF\classes\example
+
+경로변경 시 Java Build Path > Source 하단에 경로변경
+
+서비스되는 문서는 결국 src/main/webapp/WEB-INF에 .class로 확장자 파일이 생성되기 때문에
+
+MVC 패턴 : 유지보수에 용이하게 하기위함
+Model : Java
+View : JSP ()
+Controller : Servlet : 궁극적인 목표는 controller 역할을 하기 위함
+
+Java파일러 서블릿 class로 만들려면 extends HttpServlet class
+단, 콘솔이 아닌 웹에서 실행하기 위함으로 main method는 작성하지 않아도 됨
+
+==== 객체 단위의 입출력 ====
+
+직렬화 : 객체단위의 입출력 시 객체가 갖고 있는 필드를 바이트 단위로 파일 형태로 변환
+Object의 inputStream과 outputStream으로 바이트 단위로 변환 가능
+
+단지, 직렬화를 위한 interface가 Serialiazble이다. 해당 인터페이스는 메서드가 없어 오버라이딩 할 게 없음
+
+web.xml은 프로젝트 생성에 영향을 주기 때문에 꼭 확인해야함!
