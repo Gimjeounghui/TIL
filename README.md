@@ -189,6 +189,6 @@ Servlet 포워드
 Servlet이 2개 일 때 first servlet에서 바로  second servlet으로 가는 프로세스가 아닌 내부적으로 first servlet이 클라이언트에게 재 요청 후 클라이언트가 seceond servlet으로 요청하는 프로세스임을 기억
 
 웹 브라우저에 재요청하는 방식이므로 값 전달 시 주의해야함(값을 직접적으로 보내지 못함)
-[김정희] [오후 2:53]  $("input[type='button']")
-[김정희] [오후 2:53] 이렇게 줄 수도 있는건가..?
-[김정희] [오후 3:07] 제이쿼리 작성방법, form의 method와 action을 제이쿼리로 작성하는방법
+[김정희] 
+    $("input[type='button']") -> 이렇게 줄 수도 있는건가..?
+    제이쿼리 작성방법, form의 method와 action을 제이쿼리로 작성하는방법
