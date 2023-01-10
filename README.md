@@ -192,3 +192,16 @@ Servlet이 2개 일 때 first servlet에서 바로  second servlet으로 가는 
 [김정희] 
     $("input[type='button']") -> 이렇게 줄 수도 있는건가..?
     제이쿼리 작성방법, form의 method와 action을 제이쿼리로 작성하는방법
+
+Servlet 포워드하는 방법
+
+1) redirect ***
+2) refresh
+3) location [JS]
+
+1~3번의 방법은 내부적으로 Fisrt-Servlet이 Client에게 Second-Servlet으로 재요청
+
+4) dispatcher ***
+
+내부적으로 First-Servlet이 Second-Servlet에게 바로 요청
+따라서, First-Sevlet이 사용하던 request, response 객체를 그대로 사용가능
