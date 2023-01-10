@@ -176,3 +176,19 @@ HttpServletRequest class의 주요 메서드
 4) 
 
 HttpServletResponse
+
+Day_14 : 2023-01-10
+ajax는 개발자도구(Network)를 통해서 데이터 입력을 확인
+jsp와 servlet은 이클립스의 콘솔에서 오류확인해야함
+
+Ajax. Servlet, JSON, QueryString, XML, jQuery, mapping주소, 서블릿 하나에 mapping 여러개 가능(get, post)
+
+Servlet 포워드
+1) redirect 방법
+
+Servlet이 2개 일 때 first servlet에서 바로  second servlet으로 가는 프로세스가 아닌 내부적으로 first servlet이 클라이언트에게 재 요청 후 클라이언트가 seceond servlet으로 요청하는 프로세스임을 기억
+
+웹 브라우저에 재요청하는 방식이므로 값 전달 시 주의해야함(값을 직접적으로 보내지 못함)
+[김정희] [오후 2:53]  $("input[type='button']")
+[김정희] [오후 2:53] 이렇게 줄 수도 있는건가..?
+[김정희] [오후 3:07] 제이쿼리 작성방법, form의 method와 action을 제이쿼리로 작성하는방법
