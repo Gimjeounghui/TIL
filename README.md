@@ -204,4 +204,8 @@ Servlet 포워드하는 방법
 4) dispatcher ***
 
 내부적으로 First-Servlet이 Second-Servlet에게 바로 요청
-따라서, First-Sevlet이 사용하던 request, response 객체를 그대로 사용가능
+따라서, First-Sevlet이 사용하던 request, response 객체를 그대로 사용가
+
+Day_ : 2023-01-11
+
+@WebServlet을 통한 초기값 설정하는 방법
