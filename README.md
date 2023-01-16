@@ -255,3 +255,9 @@ pageContext는 JSP만 갖는 속성
 JSP는 서비스된 내용이 서버에 계속해서 저장될 수 없으므로 다른 JSP에 정보를 전달해야함!!!!!!(GET, POST)
 
 로그인 정보 및 게시판 > 상세페이지 등 페이지 이동 시 매번 페이지마다 값을 전달하기 용이하지 않기 때문에 SESSTION을 이용하여 GetSesstion해서 속성값 읽어오면 됨
+
+개발자도구 > Network > 해당페이지를 로딩하기 위해서 필요한 정보들을 확인할 수 있음
+
+jsp와 jsp는 js객체를 활용 어차피 jsp는 화면에 보여주기 위한 것으로 버튼으로 이동함 (ex.location)
+jsp에서 servlet은 response, request 객체 활용
+servlet에서 다른 servlet으로 sendreDireict는 내부적으로 클라이언트에게 재요청을 진행함 따라서, sendreDireict setAttribute를 사용하지 못함
