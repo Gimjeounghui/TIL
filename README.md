@@ -210,6 +210,48 @@ Day_ : 2023-01-11
 
 @WebServlet을 통한 초기값 설정하는 방법
 
-2023-01-13 
+Day_17 : 2023-01-13 
 
 replace(/\s/g, "")=="")     =====> 해당코드 복습
+
+2023-01-16
+
+바인딩 ServletContext는 프로젝트당 1개이기 떄문에 참조변수명을 application으로 설정
+해당 객체는 3개이고, 각 3개는 범위가 상이함
+foward 후 set, get attribute로 속성을 받아옴
+
+단순히 정보를 전달할 목적이라면 sendRedirect 속성을 보낸 후 출력하려면 request.dispatcher
+
+단순이동인지, 아니면 다른 페이지에서 정보공유까지 해야하는지 고민해야함 /// forward와 Binding
+
+서블릿은 JSP를 어떤 방식으로 받아올건지가 중요함!!!!
+
+500번 에러는 서버측 오류이므로 이클립스 콘솔창 확인해야함(디버깅 할 때)
+
+input type=hidden은 사용자로부터 값을 받지 않아도 서버측으로 값을 전달하고자 할 떄 사용하는 속성 "hidden" // 상세페이지 이동, 데이터 삭제 등
+
+JSP지시자 종류
+
+- page : JSP 페이지에 대한 속성 지정
+
+contextType / pageEncoding
+contextType로 응답할 문서가 JSON이면 무엇일까?
+info 속성
+import 속성
+isErrorPage 속성 : error 발생 시 에러를 보여줄 수 있지만 errorPage는 에러발생시 해당 페이지로 이동 후 JSP 페이지를 기술하는 방법
+isErrorPage 속성
+기본값이 false 값이 true이면 내장객체라 부르는 exceptoin 변수를 사용하여 에러를 처리
+
+- include : 태그 부분에 지정된 페이지를 정적으로 삽입
+공통으로 사용할 JSP
+정적데이터
+
+- taglib
+
+JSP의 내징객체 이지만 자료를 저장할 수 있는 객체가 out, sesstion, application
+
+pageContext는 JSP만 갖는 속성
+
+JSP는 서비스된 내용이 서버에 계속해서 저장될 수 없으므로 다른 JSP에 정보를 전달해야함!!!!!!(GET, POST)
+
+로그인 정보 및 게시판 > 상세페이지 등 페이지 이동 시 매번 페이지마다 값을 전달하기 용이하지 않기 때문에 SESSTION을 이용하여 GetSesstion해서 속성값 읽어오면 됨
