@@ -248,16 +248,156 @@ isErrorPage 속성
 
 - taglib
 
-JSP의 내징객체 이지만 자료를 저장할 수 있는 객체가 out, sesstion, application
+JSP의 내징객체 이지만 자료를 저장할 수 있는 객체가 out, session, application
 
 pageContext는 JSP만 갖는 속성
 
 JSP는 서비스된 내용이 서버에 계속해서 저장될 수 없으므로 다른 JSP에 정보를 전달해야함!!!!!!(GET, POST)
 
-로그인 정보 및 게시판 > 상세페이지 등 페이지 이동 시 매번 페이지마다 값을 전달하기 용이하지 않기 때문에 SESSTION을 이용하여 GetSesstion해서 속성값 읽어오면 됨
+로그인 정보 및 게시판 > 상세페이지 등 페이지 이동 시 매번 페이지마다 값을 전달하기 용이하지 않기 때문에 session 을 이용하여 GetSession해서 속성값 읽어오면 됨
 
 개발자도구 > Network > 해당페이지를 로딩하기 위해서 필요한 정보들을 확인할 수 있음
 
 jsp와 jsp는 js객체를 활용 어차피 jsp는 화면에 보여주기 위한 것으로 버튼으로 이동함 (ex.location)
 jsp에서 servlet은 response, request 객체 활용
 servlet에서 다른 servlet으로 sendreDireict는 내부적으로 클라이언트에게 재요청을 진행함 따라서, sendreDireict setAttribute를 사용하지 못함
+
+2023-01-17
+
+@Controller / @RestController
+Spring에서 컨트롤러를 지정해주기 위한 어노테이션은 @Controller와 @RestController
+전통적인 Spring MVC 컨트롤러인 @Controller와 RESTful웹 서비스의 컨트롤러인 @RestController의 
+
+차이점은 HTTP Response Body의 생성방식
+
+@Controller의 역할은 Model 객체를 만들어 데이터를 담고 View 반환
+@RestController는 단순히 객체를 반환하고 객체 데이터는 JSON 또는 XML 형식으로 HTTP 응답에 담아 전송
+
+attr : 값이 정확한 대상들에 대해서 해당 함수로 대체
+prop : 값이 정확하지 않는 대상들에 대해서 해당 함수로 대체 (selected, checked 등)
+
+유효성 체크 시 select나 checkbox는 기본값이 있기 때문에 전체 빈칸일 경우라는 유효성 체크 시 제외
+
+is : 여부를 확인하는 함수
+
+JSON & XML
+
+**공통점**
+1. 데이터를 저장 및 전달하기 위해 고안
+2. 계층적인 데이터 구조를 가짐
+3. XMLHttpRequest 객체를 이용하여 서버로부터 데이터를 전송받음
+
+**차이점**
+1. XML은 배열을 사용할 수 없지만, JSON은 배열 사용가능
+2. XML은 XML parse(), JSON은 JS의 표준함수인 eval()함수로 parsing
+
+XML 예제
+<dog>
+    <name>별이</name>
+    <family>웰시코기</family>
+    <age>3</age>
+    <weight>3.6</weight>
+</dog>
+
+JSON 예제
+{
+    "name" : "별이",
+    "family" : "웰시코기",
+    "age" : 3,
+    "weight" : 3.6
+
+}
+
+JSON의 사용 범위
+XML 문서는 XML DOM(Document Object Model)을 이용하여 해당 문서 접근
+JSON은 문자열을 전송받은 후 해당 문자열을 바로 parsing하여 빠른 처리 속도를 가짐
+
+XMLHttpRequest 객체를 활용 : Ajax, JSON, XML
+ ㄴ 브라우저에서 제공하는 Web API 객체 HTTP 요청 전송과 응답수신을 위한 메서드와 프로퍼티 제공
+
+getParameter : 반환타입 String
+
+======= JSP 내장객체 =======
+
+web.xml : 서버 구동 시 가장먼저 실행하는 파일이므로 전체 웹에 대한 제어가 필요할 때 사용 많이함
+
+
+오류발생 시 명시할 페이지가 필요한 경우라면 
+전체 JSP문서를 제어할 수 있음 작성하면 JSP문서마다 에러페이지 명시하지 않아도 됨
+상태코드값 정의 (ex. 404, 500 등) *****
+예외에 대한 타입 정의 (ex. NullPointerException 등)
+
+JS는 싱글 thread 이지만 어떻게 Ajax 비동기 통신처리를 할 수 있을까?
+
+Ajax
+ ㄴ JS와 XMLHttpRequest 객체를 사용해서 클라이언트와 서버가 비동기 방식으로 통신하는 것
+
+ JS > 브라우저를 제어하기 위한 내장객체
+
+ 1) location
+ 2) navigation
+ 3) history
+ 4) screen
+ 5) document
+
+success????????
+hidden???????? : 페이지와 다음 페이지 정보를 유지하기 위해서 사용함 input type="hidden"
+상단 방법이 아니라면 
+
+오류발생 시 delective 속성으로 isPageError로 이동할 페이지를 명시해도 되지만
+만약, 전체 페이지에 대한 속성으로 제어하고자 할 땐 web.xml에 작성하여 상태코드값으로 이동할 페이지를 생성하여 작성하는 것이 좋다.
+
+에러페이지 우선 순위
+1. page 디렉티브의 errorPage 속성
+2. JSP 페이지에서 발생한 예외 타입이 WEB.XML파일의 <EXCEPTION-TYPE>
+3. JSP 페이지에서 발생한 예외 타입이 WEB.XML파일의 <ERROR-CODE>
+4. 웹 브라우저가 제공
+
+servletContext : 하나의 프로젝트에 1개 생성
+servletConfig(interface) : 하나의 servlet에 1개 생성
+ㄴ servlet의 기본속성을 얻을 수 있음
+
+[ JSP 내장객체 ] 
+pageContext : JSP 페이지당 1개씩 자동으로 생성되는 객체
+
+JSP 페이지에 대한 정보를 저장하고 있는 객체
+
+다른 내장 객체 구하기   ==> method (내장객체 주소를 얻을 수 있는 메서드)
+속성처리(바인딩)        ==> method [page < request < session < application]
+페이지의 흐름 제어하기   ==> method
+에러 데이터 구하기
+
+
+내장객체를 사용하고 싶을 때 pageContext를 전달
+pageContext의 mehtod : include & forward
+
+==============================================================================
+
+servletConfig -> JSP : config
+servlet 1개당 만들어짐
+
+==============================================================================
+
+상태 정보 유지 기술
+
+비연결성과 무상태를 꼭 기억하기
+
+사용자 측에 정보를 저장 : cookie
+서버 측에 정보를 저장 : session
+
+하단 3가지는 정보를 저장해두었다가 필요할 떄 접근해서 정보를 가져올 수 있는 객체(영역객체)
+
+영역객체만이 속성을 설정 할 수 있고, 설정한 값을 반환받을 수 있음
+
+1. ServletContext (jsp : application)
+   ㄴ application(dynamic project) 내가만든 jsp, servlet 전체 접근 가능
+
+2. HttpSession (jsp : session)
+   ㄴ 
+   
+3. HttpServletRequest  (jsp : request)
+   ㄴ 내가 요청/응답한 페이지까지이지만 forward하면 내가 forward한 페이지까지 유효
+
+4. page (pageContext)
+
+scope : 유효범위 => 속성을 사용할 수 있는 범위가 어디까지 인지
