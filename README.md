@@ -394,10 +394,49 @@ servlet 1개당 만들어짐
 
 2. HttpSession (jsp : session)
    ㄴ 
-   
+
 3. HttpServletRequest  (jsp : request)
    ㄴ 내가 요청/응답한 페이지까지이지만 forward하면 내가 forward한 페이지까지 유효
 
-4. page (pageContext)
+4. page (pageContext) ==> JSP만 갖는 속성
+   ㄴ
 
 scope : 유효범위 => 속성을 사용할 수 있는 범위가 어디까지 인지
+
+scope의 기능 
+
+1) MVC패턴 중 Model과 View의 데이터 정보 전달
+
+2023-01-18
+
+*** <%= %> 표현식을 대신해서 사용하는 표현언어 ***
+표현언어 : JSP 페이지에서 이용되는 여러 외부 데이터 객체를 쉽고 간편하게 참조하기 위한 언어
+ ㄴ 표현식을 대신함
+<%= %>인 표현식 대신에 사용하거나 내장객체 또는 액션태그 저장된 자료를 쉽게 참조
+
+표현언어가 갖는 내장객체 : request.getParameter
+
+** param **
+
+${} => 공백허용하지 않음
+
+${ param userid }
+${ param ['userid'] }
+${ param ["userid"] }
+
+jsp 내장객체 속성설정 가능 객체 3개 생각해내!!!!!!!!!!!!!!!!
+
+1) application (ServletContext)
+2) session (HttpSession)
+3) request (HttpServletRequest)
+4) page (Context Page)
+
+표현언어는 스트립트 요소(스크립트릿, 표현식, 선언부)에는 작성불가능
+                        <% %>    <%= %>   <%! %>
+
+표현언어는 JSTL과 사용할 떄 효율적!
+
+표현언어는 속성에 접근해서 출력할 떄 용이!
+
+표현언어의 연산자 중 가장많이 활용하는 연산자 : empty! (값이 있는지 없는지 확안)
+만약, 값이 null이라면 logic 처리를 통해 값을 가져와야함 (default return value = true)
