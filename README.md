@@ -464,3 +464,32 @@ SECOND
 MILLISECOND
 ZONE_OFFSET
 AM_PM
+
+JSP getParameter()와 getAttribute()의 차이점
+
+getParameter() retrun 타입 : String
+getAttribute() return 타입 : Object
+
+executeQuery(String sql)
+resultSet 객체를 반환하는 SQL문에 사용되고, SQL문을 실행한 다음 레코드셋을 반환하는 경우를 의미하며 SELECT문인 경우에 사용되어진다.
+SQL문에 해당하는 레코드가 없는 경우에는 레코드 셋은 NULL값을 갖는다.
+
+쿼리문 insert는 ResultSet이 불필요하다 왜일까?
+
+executeQuery : 수행결과로 ResultSet 객체의 값을 반환
+               select 구문을 수행할 때 사용되는 함수
+
+executeQuery 함수를 사용하는 방법 -> resultSet 객체에 결과값을 담을 수 있음
+
+pstmt = con.preparedStatemetn("SELECT ID, NAME, FROM SAMPLE_TABLE");
+ResultSet re = pstmt.executeQuery();
+
+while(rs.next()) {
+
+   System.out.println("ID = " + rs.getInt(1) + ", NAME = " + rs.getString(2));
+}
+
+ID = 100, NAME = Jerry
+
+Query문 실행 시 ExecuteQuery : select 구문 수행 시 사용되는 함수
+               ExecuteUpdate : select 구문을 제외한 다른 구문 수행시    사용되는 함수 (return 타입 : int타입의 값을 반환)
