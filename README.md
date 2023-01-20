@@ -440,3 +440,27 @@ jsp 내장객체 속성설정 가능 객체 3개 생각해내!!!!!!!!!!!!!!!!
 
 표현언어의 연산자 중 가장많이 활용하는 연산자 : empty! (값이 있는지 없는지 확안)
 만약, 값이 null이라면 logic 처리를 통해 값을 가져와야함 (default return value = true)
+
+2023-01-20
+
+Java Calendar에 정의된 필드
+
+-- 날짜 --
+YEAR
+MONTH
+WEEK_OF_YEAR
+WEEK_OF_MONTH
+DATE
+DAY_OF_MONTH
+DAY_OF_YEAR
+DAY_OF_WEEK
+DAY_OF_WEEK_IN_MONTH
+
+-- 시간 --
+HOUR
+HOUR_OF_DAY
+MINUTE
+SECOND
+MILLISECOND
+ZONE_OFFSET
+AM_PM
