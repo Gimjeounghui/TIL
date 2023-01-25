@@ -493,3 +493,29 @@ ID = 100, NAME = Jerry
 
 Query문 실행 시 ExecuteQuery : select 구문 수행 시 사용되는 함수
                ExecuteUpdate : select 구문을 제외한 다른 구문 수행시    사용되는 함수 (return 타입 : int타입의 값을 반환)
+
+2023-01-25
+
+dao : 데이터베이스 연동을 위해서 만든 class(일반적으로 개발자들이 인지함)
+
+수정과 삭제 메서드의 반환형이 int라면 틀이 비슷하게 감
+
+public Board boardSelect(int dNum) -> 상세페이지 board의 번호를 매개변수로 가져감
+
+form에다가 read only를 작성하면 값을 입력할 수 없지만 DB전송은 가능
+
+request.getContextPath() -> WEB.XML에 작성한 코드를 근거로 시작페이지를 찾음
+WEB.XML에 명시된 시작페이지가 없다면 오류발생
+
+시작페이지 이름은 거진 index, default, main이름을 사용
+
+forward : url 값이 변경되지 않음
+sendRedirect : url 값이 변겯되어짐
+
+입력화면에서 입력한 값을 가지고 servlet --> service --> DAO
+
+수정작업은 기존의 글을 보여주어야 하기 때문에 해당하는 글 번호를 기준으로 DB에서 가져와야함
+
+게시판 수정 LOGIC과 흐름 다시 공부하기!
+
+TABLE이 변경되면 VO가 바뀌고, VO가 변경되면 DAO가 변경되고 DAO가 변경되면 입력화면이 변경되어진다.
