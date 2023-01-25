@@ -519,3 +519,23 @@ sendRedirect : url 값이 변겯되어짐
 게시판 수정 LOGIC과 흐름 다시 공부하기!
 
 TABLE이 변경되면 VO가 바뀌고, VO가 변경되면 DAO가 변경되고 DAO가 변경되면 입력화면이 변경되어진다.
+
+java Timestamp : 현재시간을 구할 수 있는 class (import)
+
+Date와의 차이점 : Date는 Millisecond까지 구할 수 있지만 Timestamp는 Milliseconddp Nanosecond까지 구할 수 있다.
+
+사용방법 
+- Timestamp timestamp명 = new Timestamp(System.currentTimeMillis());
+- Timestamp timestamp명 = new Timestamp(System.nanoTime());
+
+Timestamp 역시 Date처럼 SimpleDateFormat을 적용할 수 있는데 Format을 설정한 뒤에 적용해 주면 동일하게 적용되는 것이 보인다.
+
+참고 : https://wakestand.tistory.com/396
+
+JDBC > ResultSet은 3개의 Section
+bof & date & eof
+
+session은 브라우저당 한 사용자로 봄
+
+getAttribute() : return type Object;
+getParameter() : return type String;
