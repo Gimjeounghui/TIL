@@ -539,3 +539,41 @@ session은 브라우저당 한 사용자로 봄
 
 getAttribute() : return type Object;
 getParameter() : return type String;
+
+2023-01-26
+
+github에서 이클립스 열었을 떄 ? 뜨는 이유
+
+JSTL : Java Server page 표준 태그 라이브러리
+
+상태정보를 유지하기 위한 방법 4가지
+- hidden 속성 : 실제 사용자한테 값을 받지는 않지만 서버측에 전달함 
+   메서드 방식이 post일 때 사용함
+- get 방식 : url 뒤에다가 String Query -> ?로 시작하는 name=value
+- 쿠키 : 사용자측에 정보를 남기는 기술 
+(저희 사이트에 몇번쨰 방문입니다. 로그인 시 아이디 저장기능)
+- 세션 : 서버측 메모리에 정보를 남기는 기술
+
+클라이언트와 서버 통신이 정보가 유지가 되는 것도 아니고, 서버가 계속해서 정보를 갖고 있지 않기 때문에 페이지에서 페이지 사이의 정보를 유지하기(상태정보) 위한 방법은 상단의 4가지!
+
+쿠키 : 사용자측에 저장되기 때문에 사용자가 삭제할 수 있음
+
+서버측 메모리에 저장하기 위해서 필요한 바인딩이 가능한 servlet의 내장 객체(속성을 가짐)
+필요할 때 마다 속성을 저장하고 가져올 수 있음
+
+- type : Servlet Context 객체 (jsp 내장객체로 얘기하면 : application)
+  프로젝트를 하나의 application이라고 말함
+
+- type : HttpSession 객체 (client 단위) & cookie
+  사용자당 만들어지는 객체 / 사용자를 식별하는 방법은 Browser
+
+- type : HttpServletRequest
+
+JS & Server 에서도 쿠키 사용 가능
+
+쿠키는 사용자가 응답할 때 같이 응답객체와 같이 보냄
+
+
+
+
+
