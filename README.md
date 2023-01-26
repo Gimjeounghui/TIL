@@ -645,3 +645,26 @@ JSP 페이지에서 자바 코드 등의 스크립트 언어를 사용하지 않
 WhiteSpace : 공백에 관련된 오류!
 속성과 속성 사이의 공백이 하지 않았을 때 대부분 발생
 
+표현식 대신 표현언어를 사용할 예정
+
+JSP는 태그를 크게 3가지로 나눔
+
+- 스크립트 태그
+- 액션태그 (JSP 컨테이너에서 제공)
+- 커스텀태그 (JSTL, 개발자가 만든 커스텀 태그)
+
+JSTL
+
+-- Core (c) ***
+-- XML
+-- Internationalization **
+-- Database
+-- Functions (fn) ***
+
+JSTL 
+
+Functions만 ${}안에 작성!
+
+jsp는 jstl과 표현언어로 사용!
+
+if는 단일한 문장이라서 else가 없음(else 필요 시 choose)
