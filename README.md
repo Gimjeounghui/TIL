@@ -424,14 +424,14 @@ ${ param userid }
 ${ param ['userid'] }
 ${ param ["userid"] }
 
-jsp 내장객체 속성설정 가능 객체 3개 생각해내!!!!!!!!!!!!!!!!
+jsp 내장객체 속성설정(범위) 가능 객체 3개 생각해내!!!!!!!!!!!!!!!!
 
 1) application (ServletContext)
 2) session (HttpSession)
 3) request (HttpServletRequest)
-4) page (Context Page)
+4) page (Context Page) -- JSP 내에서만 사용할 수 있는 Scope
 
-표현언어는 스트립트 요소(스크립트릿, 표현식, 선언부)에는 작성불가능
+표현언어는 스크립트 요소(스크립트릿, 표현식, 선언부)에는 작성불가능
                         <% %>    <%= %>   <%! %>
 
 표현언어는 JSTL과 사용할 떄 효율적!
@@ -440,6 +440,12 @@ jsp 내장객체 속성설정 가능 객체 3개 생각해내!!!!!!!!!!!!!!!!
 
 표현언어의 연산자 중 가장많이 활용하는 연산자 : empty! (값이 있는지 없는지 확안)
 만약, 값이 null이라면 logic 처리를 통해 값을 가져와야함 (default return value = true)
+
+속성 : 공유되는 데이터
+
+표현언어는 속성들을 출력하기 위한 구문
+
+${ product }
 
 2023-01-20
 
@@ -571,9 +577,46 @@ JSTL : Java Server page 표준 태그 라이브러리
 
 JS & Server 에서도 쿠키 사용 가능
 
-쿠키는 사용자가 응답할 때 같이 응답객체와 같이 보냄
+쿠키는 사용자가 응답(response)할 때 같이 응답객체와 같이 보냄
 
+쿠키의 종류 : 파일로 생성 & 브라우저 메모리에 생성                
 
+쿠키 유효기간 설정을 하지 않으면 브라우저 종료 시까지로 유효시간 설정
+
+쿠키는 사용자측에 정보를 전달하기 때문에 유효기간을 설정함으로써 해당기간의 만료시간시 삭제의 개념으로 이해하면 됨
+
+HTTP 프로토콜의 특징 2가지 비연결성, 무상태성 꼭 기억하기!
+
+session 객체를 얻기 위한 방법 2가지
+
+- getSession()
+- getSession(true)
+
+Session id로 사용자를 식별할 수 있음 : session의 id값
+
+logic 처리를 한 servlet 정보를 JSP에 전송할 때 요청객체에 속성을 담고, request.dispatcher
+
+입력이 완료된 후 List에 갈 때 : sendRedirect
+
+servlet -> servlet
+servlet -> JSP
+
+- sendRedirect ***
+- Refresh
+- location
+- Dispatcher ***
+
+URL 패턴이란 실제 Servlet의 Mapping 정보
+-- annotation 혹은 WEB.XML --
+
+URL 패턴의 종류는 3가지
+
+- 정확한 이름까지 일치하는지
+- 디렉토리까지만 일치하는지
+- 확장자만 일치하는지
+  ㄴ 모든 파일에 동일한 servlet을 실행하고 싶을 떄 파일의 확장자를 일치시킴
+
+404 : 파일이 없거나, mapping 주소가 다를 떄
 
 
 
