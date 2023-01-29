@@ -140,8 +140,6 @@ servlet은 반드시 주솟값 설정해야함 이것을 mapping이라 하는데
 1) 어노테이션
 2) web.xml파일
 
-오류번호 404 : 파일이 없거나(경로 잘못 주었을 때), mapping주소가 잘못 되었을 때
-
 Sevlet mapping하는 방법에 대해서 배웠다.
 
 doGet() & doPost()
@@ -170,44 +168,12 @@ HttpServletRequest class의 주요 메서드
 
 HttpServletResponse
 
+
 Day_14 : 2023-01-10
 ajax는 개발자도구(Network)를 통해서 데이터 입력을 확인
 jsp와 servlet은 이클립스의 콘솔에서 오류확인해야함
 
 Ajax. Servlet, JSON, QueryString, XML, jQuery, mapping주소, 서블릿 하나에 mapping 여러개 가능(get, post)
-
-Servlet 포워드
-1) redirect 방법
-
-Servlet이 2개 일 때 first servlet에서 바로  second servlet으로 가는 프로세스가 아닌 내부적으로 first servlet이 클라이언트에게 재 요청 후 클라이언트가 seceond servlet으로 요청하는 프로세스임을 기억
-
-웹 브라우저에 재요청하는 방식이므로 값 전달 시 주의해야함(값을 직접적으로 보내지 못함)
-[김정희] 
-    $("input[type='button']") -> 이렇게 줄 수도 있는건가..?
-    제이쿼리 작성방법, form의 method와 action을 제이쿼리로 작성하는방법
-
-Servlet 포워드하는 방법
-
-1) redirect ***
-2) refresh
-3) location [JS]
-
-1~3번의 방법은 내부적으로 Fisrt-Servlet이 Client에게 Second-Servlet으로 재요청
-
-4) dispatcher ***
-
-내부적으로 First-Servlet이 Second-Servlet에게 바로 요청
-따라서, First-Sevlet이 사용하던 request, response 객체를 그대로 사용가
-
-
-Day_15 : 2023-01-11
-
-@WebServlet을 통한 초기값 설정하는 방법
-
-
-Day_17 : 2023-01-13 
-
-replace(/\s/g, "")=="")     =====> 해당코드 복습
 
 
 Day_20 : 2023-01-16
@@ -420,6 +386,13 @@ ${} => 공백허용하지 않음
 ${ param userid }
 ${ param ['userid'] }
 ${ param ["userid"] }
+
+jsp 내장객체 속성설정(범위) 가능 객체 3개 생각해내!!!!!!!!!!!!!!!!
+
+1) application (ServletContext)
+2) session (HttpSession)
+3) request (HttpServletRequest)
+4) page (Context Page) -- JSP 내에서만 사용할 수 있는 Scope
 
 표현언어는 스크립트 요소(스크립트릿, 표현식, 선언부)에는 작성불가능
                         <% %>    <%= %>   <%! %>
