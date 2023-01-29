@@ -8,6 +8,7 @@ Java 객체지향 프로그래밍 "객체지향 언어~메서드간의 호출과
 참조형 반환타입이 조금 이해되지 않아서 반복해야 할 것 같다.
 현재 2번째 반복하는 중이라 이전보다는 이해도가 좀 더 높아진 것 같지만 여러 예제를 풀다보면 모르는게 아직도 많다. 꾸준히 하는 게 답
 
+
 Day_2 : 2022-12-29
 
 데이터베이스의 분석 설계 과정에 대해서 배웠다.
@@ -22,17 +23,18 @@ Day_2 : 2022-12-29
 주말동안 JS파일을 통합하여 계속해서 개념을 추가해야 겠다.
 오늘을 기준으로 22년도가 2일밖에 남지 않았는데 사실 별 감흥이 없다.. 알고리즘 공부도 해야하는데.. 암튼 꾸준함이 답이니까 게속해보자 화이팅!
 
+
 Day_3 : 2022-12-30
 
 22년도 마지막 교육원 수업날이다. 오늘은 요구사항분석 단위평가를 보는 날이고 올해 마지막 평일이다.
-
 int 필요 시 parseInt(), Integer wrapper 객체 필요 시 valueOf()
-
 논리적모델링 관계설정 및 해석
+
 
 Day_6 : 2023-01-02
 
 Notion으로 정리했던 JS 문서 통합작업 완료
+
 
 Day_7 : 2023-01-03
 
@@ -41,9 +43,11 @@ Day_7 : 2023-01-03
 캠핑카 대여 관리 시스템 DB모델링 개념적 모데링과 논리적 모델링, 테이블 명세서, 물리적 모델링 작업 완료
 JSP, SERVLET, JSP METHOD, JSP는 java파일을 생성
 
+
 Day_8 : 2023-01-04
 
 JSP 실행파일 생성 및 이클립스 구동과 관련되어 정리가 필요하다.
+
 
 Day_9 : 2023-01-04
 
@@ -57,7 +61,19 @@ JS 요소 접근방법 중  eq(n) : 요소의 n번쨰 index 요소를 반환
 HTML요소를 동적으로 생성하는 방법 
 HTML jQuery 동적 요소를 추가하고 마지막 합치는 작업을 위한 코드 복습
 
+
 Day_10 : 2023-01-06
+
+WEB.XML은 웹 어플리케이션 서비스 시작 시 웹 서버가 읽어서 사용하는 파일
+
+WEB.XML의 위치는 src > main > webapp > WEB-INF > WEB.XML : 브라우저로 직접 요청이 불가능한 경로
+
+실제 운영될 때는 WEB-INF에서 class파일이 생성되어 실행되어짐 : 클라이언트가 요청했을 떄 실행되는 서비스 경로 
+D:\JSPCoding\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\firstExample\WEB-INF\classes\example
+
+경로변경 시 Java Build Path > Source 하단에 경로변경
+
+서비스되는 문서는 결국 src/main/webapp/WEB-INF에 .class로 확장자 파일이 생성되기 때문에
 
 XML문서 작성 시 조건
 
@@ -69,44 +85,22 @@ XML은 요소를 찾아야 함, JSON은 계층구조 접근
 조합을 한 후 Body태그에 출력해야 함..? 동적 데이터
 Ajax와 다른 점은 get 뒤에 이름을 명시해야함 (get json, get XML)
                                                  ㄴ JSON객체 내장함수..?
-                                                
-화면에 동적데이터 출력을 위한 구문 복습!
-댓글구현화면 다시 만들어보기!
+
 parents() : 찾고자 하는 요소를 매개변수로 작성 가능!
 find() : 하위요소를 찾을 때  / 매개변수 작성 가능
 
 동적인 데이터에 이벤트를 추가할 때 .on("이벤트", "대상", 함수) 작성
 
+
 Day_13 : 2023-01-09
 
-jQuery가 지원하는 속성 data- : 반복되는 data를 처리하기 위한 속성
-- 뒤는 고정값이 아닌 식별하기 위한 값을 개발자가 직접 명시해야함
-중복된 코드를 함수화처리
-
+data- : jQuery가 반복되는 data를 처리하기 위해 지원하는 속성이며, - 뒤는 고정값이 아닌 식별하기 위한 값을 개발자가 직접 명시
+중복되는 코드를 함수화처리
 순서도의 마름모는 판단기호
 JSP문서 실행 시 객체가 없는 거라면 "최초실행"
-운영체제마다 확장자는 상이하지만 사용중인 WINDOW에서는 캡쳐참고
-항상 브라우저의 주소 확인하는 습관 들이기!(URL)
+항상 URL 확인하는 습관 들이기!
 
-Web.xml의 가장 중요한 건 웹 어플리케이션 서비스 시작 시 웹 서버가 읽어서 사용하는 파일
-
-Web.xml의 위치는 src > main > webapp > WEB-INF > Web.xml : 브라우저로 직접 
-ㄴ 요청이 불가능한 경로
-
-실제 운영될 때는 WEB-INF에서 class파일이 생성되어 실행되어짐 : 클라이언트가 요청했을 떄 실행되는 서비스 경로 
-D:\JSPCoding\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\firstExample\WEB-INF\classes\example
-
-경로변경 시 Java Build Path > Source 하단에 경로변경
-
-서비스되는 문서는 결국 src/main/webapp/WEB-INF에 .class로 확장자 파일이 생성되기 때문에
-
-MVC 패턴 : 유지보수에 용이하게 하기위함
-Model : Java
-View : JSP ()
-Controller : Servlet : 궁극적인 목표는 controller 역할을 하기 위함
-
-Java파일러 서블릿 class로 만들려면 extends HttpServlet class
-단, 콘솔이 아닌 웹에서 실행하기 위함으로 main method는 작성하지 않아도 됨
+Java파일로 Servlet 생성 시 HttpServlet 상속받아야 하고, console이 아닌 Web에서 실행하기 위한 것이므로 main method는 작성하지 않아도 됨 
 
 ==== 객체 단위의 입출력 ====
 
@@ -205,13 +199,16 @@ Servlet 포워드하는 방법
 내부적으로 First-Servlet이 Second-Servlet에게 바로 요청
 따라서, First-Sevlet이 사용하던 request, response 객체를 그대로 사용가
 
+
 Day_15 : 2023-01-11
 
 @WebServlet을 통한 초기값 설정하는 방법
 
+
 Day_17 : 2023-01-13 
 
 replace(/\s/g, "")=="")     =====> 해당코드 복습
+
 
 Day_20 : 2023-01-16
 
@@ -261,6 +258,7 @@ jsp와 jsp는 js객체를 활용 어차피 jsp는 화면에 보여주기 위한 
 jsp에서 servlet은 response, request 객체 활용
 servlet에서 다른 servlet으로 sendreDireict는 내부적으로 클라이언트에게 재요청을 진행함 따라서, sendreDireict setAttribute를 사용하지 못함
 
+
 Day_21 : 2023-01-17
 
 @Controller / @RestController
@@ -282,6 +280,7 @@ is : 여부를 확인하는 함수
 JSON & XML
 
 **공통점**
+
 1. 데이터를 저장 및 전달하기 위해 고안
 2. 계층적인 데이터 구조를 가짐
 3. XMLHttpRequest 객체를 이용하여 서버로부터 데이터를 전송받음
@@ -366,7 +365,6 @@ JSP 페이지에 대한 정보를 저장하고 있는 객체
 페이지의 흐름 제어하기   ==> method
 에러 데이터 구하기
 
-
 내장객체를 사용하고 싶을 때 pageContext를 전달
 pageContext의 mehtod : include & forward
 
@@ -406,11 +404,11 @@ scope의 기능
 
 1) MVC패턴 중 Model과 View의 데이터 정보 전달
 
+
 Day_22 : 2023-01-18 
 
 *** <%= %> 표현식을 대신해서 사용하는 표현언어 ***
-표현언어 : JSP 페이지에서 이용되는 여러 외부 데이터 객체를 쉽고 간편하게 참조하기 위한 언어
- ㄴ 표현식을 대신함
+표현언어 : JSP 페이지에서 이용되는 여러 외부 데이터 객체를 쉽고 간편하게 참조하기 위한 언어. 표현식을 대신함
 <%= %>인 표현식 대신에 사용하거나 내장객체 또는 액션태그 저장된 자료를 쉽게 참조
 
 표현언어가 갖는 내장객체 : request.getParameter
@@ -422,13 +420,6 @@ ${} => 공백허용하지 않음
 ${ param userid }
 ${ param ['userid'] }
 ${ param ["userid"] }
-
-jsp 내장객체 속성설정(범위) 가능 객체 3개 생각해내!!!!!!!!!!!!!!!!
-
-1) application (ServletContext)
-2) session (HttpSession)
-3) request (HttpServletRequest)
-4) page (Context Page) -- JSP 내에서만 사용할 수 있는 Scope
 
 표현언어는 스크립트 요소(스크립트릿, 표현식, 선언부)에는 작성불가능
                         <% %>    <%= %>   <%! %>
@@ -462,84 +453,26 @@ ${<표현1>.<표현2>} 형식 사용
         List & 배열 : 원소를 찾아 출력
         객체(VO) : field명을 주면 getter(접근자)를 찾아와서 출력
 
+
 Day_24 : 2023-01-20
-
-Java Calendar에 정의된 필드
-
--- 날짜 --
-YEAR
-MONTH
-WEEK_OF_YEAR
-WEEK_OF_MONTH
-DATE
-DAY_OF_MONTH
-DAY_OF_YEAR
-DAY_OF_WEEK
-DAY_OF_WEEK_IN_MONTH
-
--- 시간 --
-HOUR
-HOUR_OF_DAY
-MINUTE
-SECOND
-MILLISECOND
-ZONE_OFFSET
-AM_PM
-
-JSP getParameter()와 getAttribute()의 차이점
 
 getParameter() retrun 타입 : String
 getAttribute() return 타입 : Object
 
-executeQuery(String sql)
-resultSet 객체를 반환하는 SQL문에 사용되고, SQL문을 실행한 다음 레코드셋을 반환하는 경우를 의미하며 SELECT문인 경우에 사용되어진다.
-SQL문에 해당하는 레코드가 없는 경우에는 레코드 셋은 NULL값을 갖는다.
+executeQuery : select 쿼리문 / 수행결과로 resultSet 객체의 값 반환 / resultSet 객체에 결과값을 담을 수 있음
 
-쿼리문 insert는 ResultSet이 불필요하다 왜일까?
-
-executeQuery : 수행결과로 ResultSet 객체의 값을 반환
-               select 구문을 수행할 때 사용되는 함수
-
-executeQuery 함수를 사용하는 방법 -> resultSet 객체에 결과값을 담을 수 있음
-
-pstmt = con.preparedStatemetn("SELECT ID, NAME, FROM SAMPLE_TABLE");
-ResultSet re = pstmt.executeQuery();
-
-while(rs.next()) {
-
-   System.out.println("ID = " + rs.getInt(1) + ", NAME = " + rs.getString(2));
-}
-
-ID = 100, NAME = Jerry
-
-Query문 실행 시 ExecuteQuery : select 구문 수행 시 사용되는 함수
-               ExecuteUpdate : select 구문을 제외한 다른 구문 수행시    사용되는 함수 (return 타입 : int타입의 값을 반환)
 
 Day_29 : 2023-01-25
-
-dao : 데이터베이스 연동을 위해서 만든 class(일반적으로 개발자들이 인지함)
-
-수정과 삭제 메서드의 반환형이 int라면 틀이 비슷하게 감
-
-public Board boardSelect(int dNum) -> 상세페이지 board의 번호를 매개변수로 가져감
-
-form에다가 read only를 작성하면 값을 입력할 수 없지만 DB전송은 가능
-
-request.getContextPath() -> WEB.XML에 작성한 코드를 근거로 시작페이지를 찾음
-WEB.XML에 명시된 시작페이지가 없다면 오류발생
-
-시작페이지 이름은 거진 index, default, main이름을 사용
 
 forward : url 값이 변경되지 않음
 sendRedirect : url 값이 변겯되어짐
 
-입력화면에서 입력한 값을 가지고 servlet --> service --> DAO
+Java > dao class : 데이터베이스 연동을 위해 만든 class
 
-수정작업은 기존의 글을 보여주어야 하기 때문에 해당하는 글 번호를 기준으로 DB에서 가져와야함
+form 태그에 read only 작성 시 값 입력은 불가능 하지만 DB전송은 가능
 
-게시판 수정 LOGIC과 흐름 다시 공부하기!
-
-TABLE이 변경되면 VO가 바뀌고, VO가 변경되면 DAO가 변경되고 DAO가 변경되면 입력화면이 변경되어진다.
+request.getContextPath() -> WEB.XML에 작성한 코드를 근거로 시작페이지를 찾음 / WEB.XML에 명시된 시작페이지가 없다면 오류발생
+시작페이지 이름은 index, default, main이름을 사용
 
 java Timestamp : 현재시간을 구할 수 있는 class (import)
 
@@ -561,68 +494,57 @@ session은 브라우저당 한 사용자로 봄
 getAttribute() : return type Object;
 getParameter() : return type String;
 
+
 Day_30 : 2023-01-26
 
-github에서 이클립스 열었을 떄 ? 뜨는 이유
+Http 프로토콜의 특징 : 비연결성 & 무상태성
 
-JSTL : Java Server page 표준 태그 라이브러리
+클라이언트와 서버의 통신 정보가 유지되지 않고, 서버가 계속해서 정보를 갖고 있지 않기 때문에 페이지에서 페이지 사이의 상태정보를 유지하기 위한 방법
 
 상태정보를 유지하기 위한 방법 4가지
-- hidden 속성 : 실제 사용자한테 값을 받지는 않지만 서버측에 전달함 
-   메서드 방식이 post일 때 사용함
-- get 방식 : url 뒤에다가 String Query -> ?로 시작하는 name=value
-- 쿠키 : 사용자측에 정보를 남기는 기술 
-(저희 사이트에 몇번쨰 방문입니다. 로그인 시 아이디 저장기능)
-- 세션 : 서버측 메모리에 정보를 남기는 기술
 
-클라이언트와 서버 통신이 정보가 유지가 되는 것도 아니고, 서버가 계속해서 정보를 갖고 있지 않기 때문에 페이지에서 페이지 사이의 정보를 유지하기(상태정보) 위한 방법은 상단의 4가지!
+- hidden 속성 : 실제 사용자한테 값을 받지는 않지만 서버측에 전달, 메서드 방식이 post일 때 사용
+- method > get  : Query String 작성( name = value )
+- Cookie : 사용자측에 정보를 남기는 기술 
+- Session : 서버측 메모리에 정보를 남기는 기술
 
-쿠키 : 사용자측에 저장되기 때문에 사용자가 삭제할 수 있음
 
-서버측 메모리에 저장하기 위해서 필요한 바인딩이 가능한 servlet의 내장 객체(속성을 가짐)
-필요할 때 마다 속성을 저장하고 가져올 수 있음
+Cookie
 
-- type : Servlet Context 객체 (jsp 내장객체로 얘기하면 : application)
-  프로젝트를 하나의 application이라고 말함
+- 사용자 측에 저장되기 때문에 사용자가 삭제할 수 있음
+- JS & Server 에서도 쿠키 사용 가능
+- 사용자가 응답(response)할 때 같이 응답객체와 같이 보냄
+- 유효기간 미 설정 시 브라우저 종료까지로 유효시간 설정
+- cookie 생성방법 [ 파일로 생성 & 브라우저 메모리에 생성 ]
 
-- type : HttpSession 객체 (client 단위) & cookie
-  사용자당 만들어지는 객체 / 사용자를 식별하는 방법은 Browser
+Session
 
-- type : HttpServletRequest
+- session 객체를 얻기 위한 방법 2가지 [ getSession() / getSession(true) ]
+- session의 id값으로 사용자를 식별할 수 있음
+- logic 처리완료된 servlet 정보를 JSP에 전송할 때 요청객체에 속성을 담은 후 "request.dispatcher"
+- insert 후 List 화면으로 이동 시 "sendRedirect"
 
-JS & Server 에서도 쿠키 사용 가능
-
-쿠키는 사용자가 응답(response)할 때 같이 응답객체와 같이 보냄
-
-쿠키의 종류 : 파일로 생성 & 브라우저 메모리에 생성                
-
-쿠키 유효기간 설정을 하지 않으면 브라우저 종료 시까지로 유효시간 설정
-
-쿠키는 사용자측에 정보를 전달하기 때문에 유효기간을 설정함으로써 해당기간의 만료시간시 삭제의 개념으로 이해하면 됨
-
-HTTP 프로토콜의 특징 2가지 비연결성, 무상태성 꼭 기억하기!
-
-session 객체를 얻기 위한 방법 2가지
-
-- getSession()
-- getSession(true)
-
-Session id로 사용자를 식별할 수 있음 : session의 id값
-
-logic 처리를 한 servlet 정보를 JSP에 전송할 때 요청객체에 속성을 담고, request.dispatcher
-
-입력이 완료된 후 List에 갈 때 : sendRedirect
-
-servlet -> servlet
-servlet -> JSP
+-- Servlet 포워드 방법 -- 
 
 - sendRedirect ***
 - Refresh
 - location
 - Dispatcher ***
 
-URL 패턴이란 실제 Servlet의 Mapping 정보
--- annotation 혹은 WEB.XML --
+JSP 태그 
+
+- 스크립트 태그
+- 액션태그 (JSP 컨테이너 제공)
+- 커스텀태그 (JSTL & 개발자가 만든 커스텀 태그)
+
+JSTL
+
+- Core (c) ***
+- XML
+- Internationalization **
+- Database
+- Functions (fn) *** [ Functions만 ${}안에 작성 ]
+- if는 단일한 문장이라서 else가 없음 (else 필요 시 choose)
 
 URL 패턴의 종류는 3가지
 
@@ -631,39 +553,16 @@ URL 패턴의 종류는 3가지
 - 확장자만 일치하는지
   ㄴ 모든 파일에 동일한 servlet을 실행하고 싶을 떄 파일의 확장자를 일치시킴
 
-404 : 파일이 없거나, mapping 주소가 다를 떄
-
-액션태그 
-JSP 페이지에서 자바 코드 등의 스크립트 언어를 사용하지 않고 다른 페이지의 서블릿이나 자바빈의 객체에 접근할 수 있도록 태그를 이용해 구현된 기능
-
-액션태그 : JSP 컨테이너가 제공하는 태그
-커스텀 태그 : 개발자가 만들어 사용하는 태그
-
 WhiteSpace : 공백에 관련된 오류!
 속성과 속성 사이의 공백이 하지 않았을 때 대부분 발생
 
-표현식 대신 표현언어를 사용할 예정
 
-JSP는 태그를 크게 3가지로 나눔
+Day_33 : 2023-01-29
 
-- 스크립트 태그
-- 액션태그 (JSP 컨테이너에서 제공)
-- 커스텀태그 (JSTL, 개발자가 만든 커스텀 태그)
+MVC 패턴 : 유지보수에 용이하게 하기위함
+Model : Java
+View : JSP
+Controller : Servlet : 궁극적인 목표는 controller 역할을 하기 위함
 
-JSTL
-
--- Core (c) ***
--- XML
--- Internationalization **
--- Database
--- Functions (fn) ***
-
-JSTL 
-
-Functions만 ${}안에 작성!
-
-jsp는 jstl과 표현언어로 사용!
-
-if는 단일한 문장이라서 else가 없음(else 필요 시 choose)
 
 Day_34 : 2023-01-30
