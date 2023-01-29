@@ -24,8 +24,7 @@ Day_2 : 2022-12-29
 
 Day_3 : 2022-12-30
 
-22년도 마지막 교육원 수업날이다. 오늘은 요구사항분석 단위평가를 보는 날이고 올해 마지막 평일이다. 만 나이로 시범운영 기간을 거쳐 반영된다고 하지만 그냥 나는 29이 되는 것 같다.
-어젯밤 백두산이 25년도에 폭발할 거라는 것을 기사를 통해 접하게 되었고 너무 무섭고, 두렵고, 나에게 남은 시간이 3년이라는 생각이 들고..많은 생각이 들었다. 제발 무사하게 지나갈 수 있게 모든 신에게 빌어본다. 종교는 없지만 제발.. 인생을 더 보람차고 값지게 보낼 수 있는 시간을 주면 너무 좋을 것 같다. 
+22년도 마지막 교육원 수업날이다. 오늘은 요구사항분석 단위평가를 보는 날이고 올해 마지막 평일이다.
 
 int 필요 시 parseInt(), Integer wrapper 객체 필요 시 valueOf()
 
@@ -206,7 +205,7 @@ Servlet 포워드하는 방법
 내부적으로 First-Servlet이 Second-Servlet에게 바로 요청
 따라서, First-Sevlet이 사용하던 request, response 객체를 그대로 사용가
 
-Day_ : 2023-01-11
+Day_15 : 2023-01-11
 
 @WebServlet을 통한 초기값 설정하는 방법
 
@@ -214,7 +213,7 @@ Day_17 : 2023-01-13
 
 replace(/\s/g, "")=="")     =====> 해당코드 복습
 
-2023-01-16
+Day_20 : 2023-01-16
 
 바인딩 ServletContext는 프로젝트당 1개이기 떄문에 참조변수명을 application으로 설정
 해당 객체는 3개이고, 각 3개는 범위가 상이함
@@ -262,7 +261,7 @@ jsp와 jsp는 js객체를 활용 어차피 jsp는 화면에 보여주기 위한 
 jsp에서 servlet은 response, request 객체 활용
 servlet에서 다른 servlet으로 sendreDireict는 내부적으로 클라이언트에게 재요청을 진행함 따라서, sendreDireict setAttribute를 사용하지 못함
 
-2023-01-17
+Day_21 : 2023-01-17
 
 @Controller / @RestController
 Spring에서 컨트롤러를 지정해주기 위한 어노테이션은 @Controller와 @RestController
@@ -407,7 +406,7 @@ scope의 기능
 
 1) MVC패턴 중 Model과 View의 데이터 정보 전달
 
-2023-01-18
+Day_22 : 2023-01-18 
 
 *** <%= %> 표현식을 대신해서 사용하는 표현언어 ***
 표현언어 : JSP 페이지에서 이용되는 여러 외부 데이터 객체를 쉽고 간편하게 참조하기 위한 언어
@@ -463,9 +462,7 @@ ${<표현1>.<표현2>} 형식 사용
         List & 배열 : 원소를 찾아 출력
         객체(VO) : field명을 주면 getter(접근자)를 찾아와서 출력
 
-
-
-2023-01-20
+Day_24 : 2023-01-20
 
 Java Calendar에 정의된 필드
 
@@ -518,7 +515,7 @@ ID = 100, NAME = Jerry
 Query문 실행 시 ExecuteQuery : select 구문 수행 시 사용되는 함수
                ExecuteUpdate : select 구문을 제외한 다른 구문 수행시    사용되는 함수 (return 타입 : int타입의 값을 반환)
 
-2023-01-25
+Day_29 : 2023-01-25
 
 dao : 데이터베이스 연동을 위해서 만든 class(일반적으로 개발자들이 인지함)
 
@@ -564,7 +561,7 @@ session은 브라우저당 한 사용자로 봄
 getAttribute() : return type Object;
 getParameter() : return type String;
 
-2023-01-26
+Day_30 : 2023-01-26
 
 github에서 이클립스 열었을 떄 ? 뜨는 이유
 
@@ -668,3 +665,5 @@ Functions만 ${}안에 작성!
 jsp는 jstl과 표현언어로 사용!
 
 if는 단일한 문장이라서 else가 없음(else 필요 시 choose)
+
+Day_34 : 2023-01-30
