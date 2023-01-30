@@ -558,3 +558,5 @@ DataSource
 - 하나의 인스턴스를 만드는 것
 
 contextPath()..
+
+핸들러매핑이 가지고 있는 VALUE 값을 가지고 Controller의 메서드를 실행?
