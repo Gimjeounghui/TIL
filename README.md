@@ -568,5 +568,10 @@ Filter
 
 == jsp & 표현언어 & jstl 공부 ==
 
+
+Day_35 : 2023-01-31
+
 어떤 서브 컨트롤로 가야할 정보가 없으니 핸들러로 이동 후 서브컨트롤러에서 서비스 dao
 dao는 결과값을 service subcontroller(class로 만들었음)subcontroller의 반환은 온전한 반환값이 아닌 물리적인 경로가 아님 따라서 뷰리솔브에 가서 온전한 경로를 만든 후에 포워드해야함
+
+요청한 종류에 따라 처리할 내용은 HandlerMapping에 작성예정
