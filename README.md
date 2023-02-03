@@ -582,3 +582,41 @@ trimDirectiveWhitespaces : html 문서로 보여줄 떄 page 디렉티브 영역
 
 Day_38 : 2023-02-03
 
+사용자와 관리자 페이지가 따로 구현되어야함
+추후 구축에는 사용자 테이블에서 관리자 매핑 정보가 들어가면 안됨
+사용자는 list, Detail 페이지가 필요함
+따라서, 사용자는 관리페이지에 접속할 수 없고, 관리자는 사용자페이지로 접근할 수 없다
+
+Spring Framework, Spring Boot FrameWork
+
+Spring Framework : 디스패처, 핸들러매핑, 인코딩, 필터, 뷰 만들지 않고 로직에만 집중할 수 있는 프레임워크
+
+현재 공부하는 DispatcherServlet -> HandlerMapping -> 
+
+
+delete method 
+request.getSession();
+request.getSession(true);
+request.getSession(false); --> session 객체가 존재한다면 기존의 담아둔 session객체에서
+getId()해서 가져옴
+
+re.next 하지않고 바로 vo에 담아서 return
+
+id과 pw가 일치하지 않으면 null값 제어
+아이디랑 비밀번호를 확인하는 메서드에서 반환하는 타입을 vo로 설정해도 됨
+
+jsp는 session이 내장되어 있기 때문에 기본값을 true에서 false로 변경
+
+session객체는 java단에서 필요할 때 생성
+
+jsp문서에 session객체를 따로 생성할 필요는 없음
+이유는 jsp 문서는 session 객체를 내장하고 있기 때문에 default 값으로 true를 가지고 있음
+따라서, jsp문서에서 session 객체 가져오지 않으려면 false값을 지정해야함
+
+회원관리 테이블 설정 시 칼럼으로 수정날짜를 추가할 수 있음
+ex> 가입 후 x개월 후 비밀번호 변경 alert
+비밀번호를 변경 후 수정날짜가 업데이트 되면서 등록일이 수정일자로 변경되어짐
+
+id가 email 주소가 될 수도 있는 부분 염두해두기
+
+디스패처는 요청에 대한 처리를 할 수 있는 클래스 정보가 없기 때문에 HandlerMapping으로 감
