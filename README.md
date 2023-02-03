@@ -575,3 +575,10 @@ Day_35 : 2023-01-31
 dao는 결과값을 service subcontroller(class로 만들었음)subcontroller의 반환은 온전한 반환값이 아닌 물리적인 경로가 아님 따라서 뷰리솔브에 가서 온전한 경로를 만든 후에 포워드해야함
 
 요청한 종류에 따라 처리할 내용은 HandlerMapping에 작성예정
+
+Day_36 : 2023-02-01
+
+trimDirectiveWhitespaces : html 문서로 보여줄 떄 page 디렉티브 영역이 빈줄로 보여지는걸 없애기 위한 코드
+
+Day_38 : 2023-02-03
+
