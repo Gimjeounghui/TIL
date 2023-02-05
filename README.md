@@ -703,17 +703,39 @@ Tag 방식
 
 Script Tag
 
+JSP태그로 지정하지 않은 것은 모두 HTML 태그로 인식하고, HTML 태그 역시 _jspService() 메서드 내에 out.print("<h1>") 이런식으로 변경
+
 - 지시어(directive) <%@  %> : JSP 페이지 속성 지정
 - 선언문(declaration) <%!  %> : 전역변수 및 메서드 선언
 - 표현식(expression) <%=  %> : 변수, 계산식, 함수 호출 결과를 문자열 형태로 출력
 - 스크립트릿(scriptlet) <%  %> : Java 코드 기술
-- 주석(comments) <%-- --%> : JSP 패이지 설명 추가
+- 주석(comments) <%-- --%> : JSP 페이지 설명 추가
 
-Action Tag : XML 스타일의 태그로 기술한 동작 기능을 수행하는 방식
+Action Tag
 
 - <jsp:include page="test.jsp" /> : 다른 페이지의 실행 결과를 현재 페이지에 포함 시킬 때 사용
 - <jsp:forward page="test.jsp" /> : 현재 JSP 페이지의 제어를 다른 페이지에 이동 시킬 때 사용 (제어 시킬 때?) 
-- <jsp:useBean id="빈 이름" class="MemberVO" /> : 자바빈 사용
+- <jsp:useBean id="빈 이름" class="자바빈 클래스명" /> : 자바빈 사용
 * 자바빈?
    ㄴ JSP에서 객체를 가져오기 위한 기법. DTO(Data Transfer Object)라고도 함
    ㄴ JSP 프로그래밍에서 DTO, DAO 클래스의 객체를 JSP페이지에서 사용하기 위해 사용
+
+- <jsp:setProperty name="빈 이름" property="속성명" /> : 자바빈의 속성을 지정하는 메서드 호출
+- <jsp:getProperty name="빈 이름" property="속성명" /> : 자바빈의 속성을 반환하는 메서드 호출
+
+Custom Tag
+
+- 새로운 Tag를 정의 후 사용하는 방법
+- <tag:printData /> : 사용자가 직접 정의한 태그 사용
+
+JSP 소스의 Servlet 변환
+
+- 변환단계(Translation Step) : 컨테이너는 JSP 파일을 Java 파일로 변환
+- 컴파일단계(Compile Step)   : 컨테이너는 변환된 Java파일을 class파일로 컴파일
+- 실행단계(Interpret Step)   : 컨테이너는 class 파일을 실행하여 그 결과(HTML, CSS, JS)를 브라우저로 출력
+
+JSP 라이프 Cycle ( JSP가 Servlet으로 변환 시 주요 method )
+
+- _jspInit() : 요구되는 자원의 연결 등 초기화 작업 수행
+- _jspSercie() : 실제 클라이언트의 요청에 대한 작업 처리 수행으로 클라이언트 요청 때마다 반복 수행
+- _jspDestroy() : 웹서버 또는 애플리케이션이 종료되는 경우 Servlet을 메모리에서 언로드하는 경우, JSP Servlet 종료를 위한 작업 수행
