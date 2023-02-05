@@ -625,3 +625,70 @@ id가 email 주소가 될 수도 있는 부분 염두해두기
 
 1. 회원정보는 쿼리에서 마스킹 처리 후 가져감
 2. java단에서 마스킹 처리를 함
+
+db 마스킹 처리
+
+Day_40 : 2023-02-05
+절대적 경로 설정, 상대적 경로 설정(지향)
+
+Node.js
+
+MyBatis : 서버 설정을 위한 xml파일을 따로 작성해놓은 것 (SpringBoot)
+
+AJAX ( Asynchronous JavaScript and XML ) 비동기 통신 처리
+
+- JavaScript로 원격지로부터 데이터를 읽어오는데 필요한 처리 기술들의 집합체
+- XMLHttpRequest 객체는 서버측 JavaScript와 통신하기 위한 Ajax 핵심 기술로 AJAX의 특징인 비동기성을 가능하게 한다.
+- XMLHttpRequest 객체로 서버측으로 부터 받아온 데이터로 client 요청 페이지를 Update
+- 서버로부터 받아온 데이터를 페이지에 반영해 주기 위해 HTML 태그 요소를 제어하는 DOM 객체에 대한 처리 및 CSS 처리의 병행을 보여줌
+- 전체 페이지 로딩 없이 문서 내 특정부분만 업데이트 하는 다이나믹 웹 페이지 기술
+- client가 요청한 정보를 변경하려면 서버에 페이지 업데이트 요청을 하는데, 이때 서버는 요청받은 정보를 처리하고 모든 페이지 영역을 HTML로 재구성 하여 완성된 페이지 형태로 응답하는 해당 방식은 페이지의 일부분만 변경되더라도 서버가 불필요한 나머지 부분까지 전부 업데이트 처리해야 하기 때문에 페이지 갱신의 퍼포먼스가 떨어질 수밖에 없고, 서버에서 응답이 돌아올 때 까지 웹 브라우저는 아무 작업도 하지 못하고 기다려야 하기 때문에 이러한 문제를 개선하기 위해 고안된 방식이 "AJAX"
+
+AJAX로 하는 일
+
+- TEXT, HTML, XML, JSON 형식으로 작성된 문서 데이터를 HTTP 프로토콜을 통해 서버에 요청
+- 웹 페이지의 특정 영역에만 필요 내용을 갱신
+- 일반적으로 프로그램의 프로세스는 동기화 처리를 진행하지만, A와 B작업을 동시에 진행하는 것을 비동기적인 처리라 하며, JavaScript에서는 콜백함수로 처리
+
+jQuery를 이용한 AJAX
+
+- jQuery 라이브러리로 AJAX를 사용하면 JavaScript만 처리하는 것보다 간결해지고 크로스 브라우징 문제도 해결가능
+
+* 크로스 브라우징?
+   ㄴ 웹 페이지의 상호 호환성, 서로 다른 브라우저들끼리 서로 호환이 가능하도록 하는 것을 의미
+   -- 크로스 브라우징 / 웹 접근성 -- 더 알아보기!
+
+- $.ajax({
+
+      url : "접속할 페이지 주소",
+      type : "get / post",
+      data : "파라미터 문자열 (ex> key=lanuage&value=java)", 
+      data Type : "text/xml/json",
+      timeout: 밀리세컨드단위 제한시간,
+      cache : 이전요청에 대한 캐쉬 저장 여부(true : 사용함 / false : 사용안함),
+
+      파일 읽기에 성공한 경우
+      success : function(data) {
+
+         통신이 성공했을 때 실행되는 함수
+      }, 
+
+      파일 읽기에 실패한 경우(주소 오타, 웹 서버 중지 등)
+      erroe : function(xhr, textStatus, errorThrown) {
+
+         통신이 실패했을 때 실행되는 함수
+      }
+});
+
+- $.ajax()함수는 웹 서버와의 통신결과에 따라 success(), error()함수 호출
+- 웹 서버에서 전달하는 결과값을 정상적으로 읽어올 경우 success()함수의 파라미터로 서버에서 읽은 결과가 전달되고, date Type에 text, xml, json 따라 처리방법 상이 (date Type에 따른 처리방법 알아보기)
+- 웹 서버에서 전달하는 결과값을 정상적으로 읽어오지 못할 경우 3개의 파라미터 전달
+   
+   ㄴ xhr: javascirpt에서 ajax처리를 위해 사용되는 XMLHttpRequest 객체원본. 이 객체가 포함하는 status 속성에 HTTP ERROR CODE(404:Page Not Found, 500:Server Error)값 포함
+   ㄴ textStatus : "error"라는 고정값을 갖는 문자열 전달
+   ㄴ errorThrown : 에러의 원인을 의미하는 문자열 전달 (404:Not Found / 500:Server Error)
+
+   데이터 포맷 변환하기
+
+   - 자료의 포맷 또한 중요. TEXT 및 EXEL 등의 자료를 애플리케이션에서 사용하려면 필요한 형식으로 변환 
+   - https://www.utilities-online.info/
