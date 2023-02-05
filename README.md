@@ -739,3 +739,11 @@ JSP 라이프 Cycle ( JSP가 Servlet으로 변환 시 주요 method )
 - _jspInit() : 요구되는 자원의 연결 등 초기화 작업 수행
 - _jspSercie() : 실제 클라이언트의 요청에 대한 작업 처리 수행으로 클라이언트 요청 때마다 반복 수행
 - _jspDestroy() : 웹서버 또는 애플리케이션이 종료되는 경우 Servlet을 메모리에서 언로드하는 경우, JSP Servlet 종료를 위한 작업 수행
+
+JSP 지시자 종류
+
+- page : <%@ page property="속성값"%> -> JSP페이지에 대한 속성지정
+- include : <%@ include file="속성값%> -> Tag 부분에 지정된 페이지를 정적으로 삽입
+- taglib : <%@ taglib prefix="속성값% uri="경로"%> -> 새로운 태그를 정의하여 이용
+
+page 지시자
