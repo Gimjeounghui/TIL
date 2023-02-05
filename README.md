@@ -55,8 +55,6 @@ JSP문서에서 Java를 작성하는 방법
 jQUERY attr() & prop() 차이점, replace(), 공백확인, radio와 check box 체크 시 is 활용(여부확인)
 
 취미 선택한 값을 출력할 때 취미는 여러개 값을 가질 수 있으므로, each와 this를 활용하여 값을 받아올 수 있다.
-회원가입 페이지 유효성 체크 확인하기 #강사님 코드 확인
-AJAX(비동기식 데이터 처리), XML, HTML & XML 차이점
 JS 요소 접근방법 중  eq(n) : 요소의 n번쨰 index 요소를 반환
 HTML요소를 동적으로 생성하는 방법 
 HTML jQuery 동적 요소를 추가하고 마지막 합치는 작업을 위한 코드 복습
@@ -692,3 +690,30 @@ jQuery를 이용한 AJAX
 
    - 자료의 포맷 또한 중요. TEXT 및 EXEL 등의 자료를 애플리케이션에서 사용하려면 필요한 형식으로 변환 
    - https://www.utilities-online.info/
+
+JSP ( Java Server Pages ) 
+
+- Tag를 이용하여 고유한 문법을 기술하는 서버 프로그래밍 방식
+
+Tag 방식
+
+- Script Tag 
+- Action Tag
+- Custom Tag
+
+Script Tag
+
+- 지시어(directive) <%@  %> : JSP 페이지 속성 지정
+- 선언문(declaration) <%!  %> : 전역변수 및 메서드 선언
+- 표현식(expression) <%=  %> : 변수, 계산식, 함수 호출 결과를 문자열 형태로 출력
+- 스크립트릿(scriptlet) <%  %> : Java 코드 기술
+- 주석(comments) <%-- --%> : JSP 패이지 설명 추가
+
+Action Tag : XML 스타일의 태그로 기술한 동작 기능을 수행하는 방식
+
+- <jsp:include page="test.jsp" /> : 다른 페이지의 실행 결과를 현재 페이지에 포함 시킬 때 사용
+- <jsp:forward page="test.jsp" /> : 현재 JSP 페이지의 제어를 다른 페이지에 이동 시킬 때 사용 (제어 시킬 때?) 
+- <jsp:useBean id="빈 이름" class="MemberVO" /> : 자바빈 사용
+* 자바빈?
+   ㄴ JSP에서 객체를 가져오기 위한 기법. DTO(Data Transfer Object)라고도 함
+   ㄴ JSP 프로그래밍에서 DTO, DAO 클래스의 객체를 JSP페이지에서 사용하기 위해 사용
