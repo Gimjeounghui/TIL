@@ -778,12 +778,19 @@ page 지시자 속성
  - import : 사용할 클래스의 패키지를 지정하는 방법
    <%@ page import="java.util.*"%>
    ** JSP 페이지에서 자동 import **
-   [java.lang.*]
+   [java.lang.*] / [javax.servlet.*] / [javax.servlet.http.*] / [javax.servlet.jsp.*]
+
+   - isErrorPage : JSP페이지가 오류를 처리하는 페이지인지 true, false(default)로 지정하는 속성
+   <%@ page isErrorPage="true"%>
+   ** isErrorPage를 true로 지정하면 내장객체라 부르는 exception 변수를 사용하여 에러 처리 **
+
+
    
 
 
 
 ===========수업시간 내용===========
+
 for each
 
 내가 필요한 기능을 추가할 때 이클립스에선 help > 플러그인? 또는 이클립스 마켓플레이스
@@ -801,3 +808,12 @@ SpringBoot에서는 다시 JDK17을 사용할 예정
 스프링은 구동되기 전에 인터넷이 반드시 연결된 상태에서 접근해야함
 
 이클립스 INI 확장자 파일로 VM 경로 설정 후 이클립스 재구동하기
+
+페키지 설정 후 프레임워크에서 생성할 때 내가 필요한 jdk버전과 맞지 않아서 오류가 발생함
+
+spring > 레거시 프로젝트를 만들 때 jdk버전이 사용자의 버전과 관계없이 생성되기 때문에 오류라서 속성에서 변경해줘야함
+
+maven의 원격지에서 파일을 가져옴
+maven의 설정 파일이 pom.xml
+
+의존성 변경을 pom.xml에서 진행(버전이 다르기 때문에) 예를 들면 톰캣 9는 servlet 4인데 현재 2
