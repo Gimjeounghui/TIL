@@ -748,8 +748,42 @@ JSP 지시자 종류
 - include : <%@ include file="속성값%> -> Tag 부분에 지정된 페이지를 정적으로 삽입
 - taglib : <%@ taglib prefix="속성값% uri="경로"%> -> 새로운 태그를 정의하여 이용
 
+
 Day_41 : 2023-02-06
 
+page 지시자
+
+- JSP 페이지에서 필요한 설정 정보를 지정
+
+page 지시자 속성
+
+- language : JSP페이지의 표현식, 선언, 스크립트릿에서 사용할 스크립트 언어의 종류를 지정하는 속성
+  <%@ page language="java"%>
+
+- contentType : JSP페이지가 생성할 문서의 타입 지정
+  ** 미지정시 text/html Default **
+   <%@ page contentType="text/html; chatset=utf-8"%>
+   <%@ page contentType="application/json"%>
+
+  - pageEncoding : JSP 페이지의 문자 인코딩 방식을 기술하는 속성
+  ** 미지정시 ISO-8859-1 Default **
+   <%@ page pageEncoding="UTF-8"%>
+
+  ** 한글 지원을 위해서는 [EUC-KR] 지정 **
+   <%@ page pageEncoding="EUC-KR"%>
+
+ - info : JSP페이지 전체에 대한 설명이나 버전, 작성자, 작성일자와 같은 정보를 문자열로 기술하는 부분
+   <%@ page info="JSP페이지에 대한 설명 및 정보"%>
+
+ - import : 사용할 클래스의 패키지를 지정하는 방법
+   <%@ page import="java.util.*"%>
+   ** JSP 페이지에서 자동 import **
+   [java.lang.*]
+   
+
+
+
+===========수업시간 내용===========
 for each
 
 내가 필요한 기능을 추가할 때 이클립스에선 help > 플러그인? 또는 이클립스 마켓플레이스
@@ -766,20 +800,4 @@ SpringBoot에서는 다시 JDK17을 사용할 예정
 
 스프링은 구동되기 전에 인터넷이 반드시 연결된 상태에서 접근해야함
 
-
-
-page 지시자
-
-- JSP 페이지에서 필요한 설정 정보를 지정
-
-page 지시자 속성
-
-- language : JSP페이지의 표현식, 선언, 스크립트릿에서 사용할 스크립트 언어의 종류를 지정하는 속성
-  <%@ page language="java"%>
-
-- contentType : JSP페이지가 생성할 문서의 타입 지정
-  <%@ page contentType="text/html; chatset=utf-8"%>
-  <%@ page contentType="application/json"%>
-  ** 미지정시 text/html default **
-
-  - pageEncoding 
+이클립스 INI 확장자 파일로 VM 경로 설정 후 이클립스 재구동하기
