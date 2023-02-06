@@ -764,8 +764,20 @@ SpringBoot에서는 다시 JDK17을 사용할 예정
 
 사용하는 jdk 버전은 있지만 필요에 따라 다른 버전의 jdk 압축파일을 다운로드 한 후 폴더에 저장할 수 있음
 
+스프링은 구동되기 전에 인터넷이 반드시 연결된 상태에서 접근해야함
+
 page 지시자
 
 - JSP 페이지에서 필요한 설정 정보를 지정
-- language, contentType, pagrEncoding 등 속성지정
 
+page 지시자 속성
+
+- language : JSP페이지의 표현식, 선언, 스크립트릿에서 사용할 스크립트 언어의 종류를 지정하는 속성
+  <%@ page language="java"%>
+
+- contentType : JSP페이지가 생성할 문서의 타입 지정
+  <%@ page contentType="text/html; chatset=utf-8"%>
+  <%@ page contentType="application/json"%>
+  ** 미지정시 text/html default **
+
+  - pageEncoding 
