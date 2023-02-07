@@ -785,13 +785,77 @@ page 지시자 속성
    ** isErrorPage를 true로 지정하면 내장객체라 부르는 exception 변수를 사용하여 에러 처리 **
 
 
-   
+Day_42 : 2023-02-07
+
+-- 해야할 일 --
+ 
+웹 문서 레이아웃, 기획서 수정 --
+for each 구문 공부
+싱글톤 패턴 공부
+
+Java 소스 외부로 배포
+
+== .jar는 class 파일을 압축해놓은 것 ==
+
+- .jar : class 파일을 압축해놓은 것 (java를 외부로 배포할 때)
+- .war : 웹에 관련된 프로젝트는.war로 압축(ex> dynamic Web Project) 어디로 내보내는지? 톰캣 폴더 > webapps(경로변경 하지 않으면 기본으로 webapps에 소스파일이 위치할 폴더) > 
+
+
+이클립스에서 톰캣으로 export하고 war파일로 webapps 폴더에 저장
+그리고 이클립스내 서버를 종료하고
+외부에 있는 서버를 구동
+war파일을 외부 서버 구동 시 압출파일이 풀림(따로 푸는 작업을 하지 않아도 됨)
+이렇게 외부에서 운영해야함
+
+우리가 설정했던 path에 대한 저장정보를 server.xml이 기억함
+이클립스 내 server.xml 파일에 대한 <Context docBase>를 복사한 다음
+외부에 있는 톰캣서버의 conf > server.xml 파일에서 </host> 종료태그
+
+위에 삽입 후 서버 종료 후 재 구동 시
+브라우저내 localhost:8080 입력 시 게시판 시작 페이지 구동되는 부분 확인!
+실제 구현 시 이클립스 내에서 구동할 수 없으니!
+
+왜 링크에다가 index.html을 작성하지 않아도 되는 이유는 web.xml > welcome에 index.html이 명시되어 있기 때문에!
+
+기본 환경설정에 설정되어 있는 JDK17을 참조함
 
 
 
-===========수업시간 내용===========
+legacy 프로젝트는 .jar 파일을 추가할 때 원격지로부터 파일을 직접 받아와야 하는데 받아온 파일은 Maven에서 확인할 수 있고, 파일탐색기 경로는 C:\Users\ealiy\.m2\repository  
 
-for each
+Dynamic Project & Legacy Project 차이점 
+
+Dynamic Project
+
+- 외부로 배포할 때 .war 확장자
+- .jar 파일을 외부로부터 직접 추가
+
+Legacy Project
+
+- .jar 파일을 내부 pom.xml 파일에서 관리
+- 의존성에 대한 내용은 직접 코딩하지 않고 https://mvnrepository.com 에서 검색 후 붙여넣기 작업을 권장
+
+** 의존성에 대한 내용은 마지막에 저장하지 않고, 수정한 코딩에 대해서 저장 후 Maven에 저장된 파일 버전이 맞게 변경되었는지 확인하기 **
+
+
+설치한 서버(Tomcat) 버전에 따라 servlet과 jsp 버전이 상이하기 때문에 맞춰서 설정해야함
+
+servlet : maven > servlet api
+jsp : maven > jsp.api
+
+pom.xml
+
+- 의존성을 관리하는 파일
+- 추가하는 API에 대해서 주석으로 설명을 다는 습관(알아볼 수 있게)
+- 단위테스트 할 때 사용하는 프레임워크 "junit"
+   ㄴ junit 프레임워크는 항상 버전을 4.10 이상으로 설정
+- maven 버전 변경 시 해야하는 작업 : 프로젝트 > 우클릭 > maven > update Project
+
+
+
+dto,vo에 하는 추가작업들을 대신 해줄 수 있는 것인 lombok 라이브러리 (자바개발할 때 필드에 대한 접근자, 설정자, toString, 생성자)가 자동 생성을 해주는 라이브러리
+개발자는 field만 작성하면 됨
+
 
 내가 필요한 기능을 추가할 때 이클립스에선 help > 플러그인? 또는 이클립스 마켓플레이스
 
@@ -800,8 +864,6 @@ for each
 SpringBoot에서는 다시 JDK17을 사용할 예정
 
 오라클 계정 비밀번호 Tjdurh1206!
-
-싱글톤 패턴
 
 사용하는 jdk 버전은 있지만 필요에 따라 다른 버전의 jdk 압축파일을 다운로드 한 후 폴더에 저장할 수 있음
 
@@ -820,29 +882,21 @@ maven의 설정 파일이 pom.xml
 
 loombok 라이브러리 카페에서 다운로드 받기!!!!!!!! 사이트 들어가서 > 다운로드 > 페이지 다운로드 링크 다운로드 받기
 
+디자인패턴 (Factory)
 
-Day_42 : 2023-02-07
+src > main > java
+자바소스작성
 
-dto,vo에 하는 추가작업들을 대신 해줄 수 있는 것인 lombok 라이브러리 (자바개발할 때 필드에 대한 접근자, 설정자, toString, 생성자)가 자동 생성을 해주는 라이브러리
-개발자는 field만 작성하면 됨
+src > main > resources
+자바파일이 구현되기 위해서 필요한 설정파일들 예를 들어 MyBatis
 
-압축파일 
+servlet-context : 웹에 대한 내용 작성
+root-context : DB연동에 대한 내용 작성
 
-- .jar는 class 파일을 압축해놓은 것 (java를 외부로 배포할 때)
-- .war 웹에 관련된 프로젝트는.war로 압축(ex> dynamic Web Project) 어디로 내보내는지?
-톰캣 폴더 > webapps(경로변경 하지 않으면 기본으로 webapps에 소스파일이 위치할 폴더) > 
+log4j.xml은 dtd라는 문서가 필요함 따라서, log4j.xml 파일을 수정해야함
 
- 실제 운영은 서버에서 하게 해야함(.war라는 확장자로 웹 프로젝트를 내보내야함)
+나중에 dao도 코드가 비슷하니 우리는 쿼리문에 집중할 수 있음(DB)
 
- 이클립스에서 톰캣으로 export하고 war파일로 webapps 폴더에 저장
- 그리고 이클립스내 서버를 종료하고
- 외부에 있는 서버를 구동
- war파일을 외부 서버 구동 시 압출파일이 풀림(따로 푸는 작업을 하지 않아도 됨)
- 이렇게 외부에서 운영해야함
-
- 우리가 설정했던 path에 대한 저장정보를 server.xml이 기억함
- 이클립스 내 server.xml 파일에 대한 <Context docBase>를 복사한 다음
- 외부에 있는 톰캣서버의 conf > server.xml 파일에서 </host> 종료태그 위에 삽입 후 서버 종료 후 재 구동 시
- 브라우저내 localhost:8080 입력 시 게시판 시작 페이지 구동되는 부분 확인!
- 실제 구현 시 이클립스 내에서 구동할 수 없으니!
- 
+Servlet IOC : 제어의 역전, 
+Servlet Container 가 인스턴스를 만듦
+스프링도 서브 컨트롤, 서비스도 인스턴스 생성을 하지않음 추후에 XML 문서를 작성할거고, 이전에 카페(인터페이스를 사용함으로서 얻을 수 있는 장점 확인) 결합도가 높은 프로그램 작성
