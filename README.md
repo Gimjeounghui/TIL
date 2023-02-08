@@ -813,8 +813,6 @@ war파일을 외부 서버 구동 시 압출파일이 풀림(따로 푸는 작�
 
 기본 환경설정에 설정되어 있는 JDK17을 참조함
 
-
-
 legacy 프로젝트는 .jar 파일을 추가할 때 원격지로부터 파일을 직접 받아와야 하는데 받아온 파일은 Maven에서 확인할 수 있고, 파일탐색기 경로는 C:\Users\ealiy\.m2\repository  
 
 Dynamic Project & Legacy Project 차이점 
@@ -831,12 +829,6 @@ Legacy Project
 
 ** 의존성에 대한 내용은 마지막에 저장하지 않고, 수정한 코딩에 대해서 저장 후 Maven에 저장된 파일 버전이 맞게 변경되었는지 확인하기 **
 
-
-설치한 서버(Tomcat) 버전에 따라 servlet과 jsp 버전이 상이하기 때문에 맞춰서 설정해야함
-
-servlet : maven > servlet api
-jsp : maven > jsp.api
-
 pom.xml
 
 - 의존성을 관리하는 파일
@@ -845,42 +837,10 @@ pom.xml
    ㄴ junit 프레임워크는 항상 버전을 4.10 이상으로 설정
 - maven 버전 변경 시 해야하는 작업 : 프로젝트 > 우클릭 > maven > update Project
 
+Lombok 라이브러리
 
-
-dto,vo에 하는 추가작업들을 대신 해줄 수 있는 것인 lombok 라이브러리 (자바개발할 때 필드에 대한 접근자, 설정자, toString, 생성자)가 자동 생성을 해주는 라이브러리
-개발자는 field만 작성하면 됨
-
-
-내가 필요한 기능을 추가할 때 이클립스에선 help > 플러그인? 또는 이클립스 마켓플레이스
-
-마켓플레이스에서 이클립스에서 스프링을 권장하는 버전이 n까지라고 명시한 만큼 안정적인 버전과 그에 맞는 jdk파일을 설치하고 해당 파일들을 D > webdeveloper 에 정리한다.
-
-SpringBoot에서는 다시 JDK17을 사용할 예정
-
--- 해야할 일 --
- 
-웹 문서 레이아웃, 기획서 수정 --
-for each 구문 공부
-싱글톤 패턴 공부
-
-사용하는 jdk 버전은 있지만 필요에 따라 다른 버전의 jdk 압축파일을 다운로드 한 후 폴더에 저장할 수 있음
-
-스프링은 구동되기 전에 인터넷이 반드시 연결된 상태에서 접근해야함
-
-이클립스 INI 확장자 파일로 VM 경로 설정 후 이클립스 재구동하기
-
-페키지 설정 후 프레임워크에서 생성할 때 내가 필요한 jdk버전과 맞지 않아서 오류가 발생함
-
-spring > 레거시 프로젝트를 만들 때 jdk버전이 사용자의 버전과 관계없이 생성되기 때문에 오류라서 속성에서 변경해줘야함
-
-maven의 원격지에서 파일을 가져옴
-maven의 설정 파일이 pom.xml
-
-의존성 변경을 pom.xml에서 진행(버전이 다르기 때문에) 예를 들면 톰캣 9는 servlet 4인데 현재 2
-
-loombok 라이브러리 카페에서 다운로드 받기!!!!!!!! 사이트 들어가서 > 다운로드 > 페이지 다운로드 링크 다운로드 받기
-
-디자인패턴 (Factory)
+- 개발자는 필요한 필드작성
+- Java단에서 개발하는 DTO, VO 클래스에서 생성자, 접근자, 설정자, toString 자동 생성해
 
 src > main > java
 자바소스작성
@@ -893,8 +853,6 @@ root-context : DB연동에 대한 내용 작성
 
 log4j.xml은 DTD라는 문서가 필요함 따라서 log4j.xml 파일을 수정해야함
 
-나중에 DAO class 코드가 비슷하니 결국 Query문(DB)에 집중할 수 있음
-
 Servlet IOC : 제어의 역전, 
 Servlet Container 가 인스턴스를 만듦
 스프링도 서브 컨트롤, 서비스도 인스턴스 생성을 하지않음 추후에 XML 문서를 작성할거고, 이전에 카페(인터페이스를 사용함으로서 얻을 수 있는 장점 확인) 결합도가 높은 프로그램 작성
@@ -902,33 +860,56 @@ Servlet Container 가 인스턴스를 만듦
 
 Day_43 : 2023-02-08
 
-- 이클립스 컴파일 하는 방법 
+Spring Framework
 
-전체삭제 후 재 붙이기 후 실행
-한칸 띄우기 실행
+- SpringFramework는 구동되기 전 인터넷 연결이 된 상태에서 접근
+- JDK 버전설정 ( 1.8이상으로 설정해야 現어플리케이션 개발에 문제X )
+- JDK를 여러개 설치할 수 있으므로 기본으로 사용할 JDK 파일은 환경변수로 설정
+- 기본 버전이 아닌 다른 JDK는 압축파일로 저장 후 사용
 
-============ 스프링프레임워크 기반의 웹 프로젝트 진행 시 순서 ============
+   ㄴ환경변수로 설정하는 이유 ?
+      운영체제 어디서든 Java를 인식할 수 있도록 하기 위한 목적
 
-첫번쨰로 결정할 사항은 우리가 앞으로 웹이라는 어플리케이션을 개발할 때 jdk 버전을 어떤거로 할지 결정
-jdk 버전을 여러개 설치할 수 있으므로 기본으로 설정할 jdk 파일은 환경변수로 설정
-기본이 되는 jdk를 반드시 환경변수를 설정해야함! 환경변수에 설정하는 것 javaform, path(존재함), classpath 설정
+   ㄴ Path 설정하는 이유 ?
+       ++++++++++++++++++++++++++++++++
+- Tomcat Server 설치 및 연동       
+   ㄴ 최소 설치버전은 8이상 권장(現개발 웹에서 사용 가능)
+   ㄴ Tomcat Server 버전에 따라 jstl, jsp, servlet 지원버전이 다름
+      jstl : maven > jstl 
+      jsp : maven > jsp.api
+      servlet : maven > servlet.api
 
-path를 설정하는 이유는 실제 cmd에 자바c를 작성
+- STS(Spring Tool Suite) 설치
+   ㄴ 이클립스 > Help > Eclipes Marketplace
+   ㄴ JDK버전이 17, 19부터는 Spring Tools3을 설치 시 오류가 발생할 수 있으니 제일 안정적인 버전인 JDK11을 설치 후 진행
+   ㄴ 현재 Spring Framework는 더 이상 버전 UP이 되지 않고있기 때문에 JDK17, 19 이상부터는 SpringBoot Framework 설치 권장
+   ㄴ JDK 저장경로 : D Driver > webdeveloper > util > JDK
+   ㄴ D Driver > webdeveloper > eclipse > eclipse.ini : vm 경로 및 버전 설정 후 이클립스 재구동
+   ㄴ eclipse.ini 코드 中
+                              -vm
+                              D:\webdeveloper\Java\jdk-11\bin
 
-Spring은 톰캣설치, SpringBoot는 톰캣이 내장되어 있음
+   ㄴ package 설정 시 기본설정된 JDK버전과 다르기 때문에 오류발생
+   ㄴ Spring Legacy Project 생성 시 Spring 버전은 3.x이고, JDK 1.6이기 때문에 pom.xml
 
-톰캣버전에 따라 JSTL, JSP, Servlet 지원버전이 다름
-현재 톰캣최소버전이 8이상
+pom.xml ( Project Object Model )
 
-기본 버전이 아닌 다른 jdk 버전은 압축파일로 저장 후 사용
-톰캣버전에 따라 jstl, jsp, servlet 지원버전이 다름
-요즘들어 최소 톰캣버전은 8이상 그래야 현재 개발하는 웹에서 사용 가능
+- maven의 빌드파일 ( 프로젝트의 다양한 정보를 처리하기 위한 객체 모델 정보를 담고 있는 파일 )
+- 프로젝트 설정을 xml태그로 기술
+   maven ?
+      pom.xml이라는 빌드파일을 사용하여 빌드 정보 기술
+      maven은 커멘드를 사용하여 간단히 프로젝트를 만들거나 빌드 가능
+      maven의 강점은 다양한 라이브러리와 프레임워크 등 이용하는 경우 maven이 관리. 이러한 프로젝트 관리를 하기 위해서 maven 명령을 실행하는 것으로 끝나지 않고, 프로젝트를 관리하고 있는 빌드파일에 대한 이해필요
 
-========================================================================
+      https://araikuma.tistory.com/447
 
-POM ( Project Object Model ) : 프로젝트 객체 모델 정보를 담고 있는 파일 
 
-2번째 녹음파일 29분 10초 이후
+
+SpringBoot Framework
+
+- Tomcat Server 내장有
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 IOC : 결합도와 관련
 AOP : 응집도와 관련
@@ -959,4 +940,48 @@ IOC(제어의 역향)이라는 것은 인스턴스 생성에 대해서 소스코
 
 디자인 패턴 중 "Factory"
 
-String
+String은 xml이라는 설정파일 사용
+bean이라는 설정파일을 정의하는 곳이 xml
+
+전체에서 사용할 파일이라면 spring > xml 파일에 설정해겠지만
+
+xml문서는 최상위의 root가 필요함 (최상위문서에 반복되는 요소가 들어감)
+
+bean => 스프링에서 관리하는 객체
+
+설정파일을 통해 인스턴스를 얻고자 할 때
+
+- bean
+- 만약 설정파일을 통해 인스턴스를 얻고 싶다면  bean이라는 요소에 직접 명시
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+Spring 컨테이너의 종류
+
+BeanFactory ( 지연로딩방식 )
+
+- Spring의 설정파일에 등록된 <bean>이라는 속성에 객체생성
+- 컨테이너가 구동 시 <bean>객체를 생성하는 것이 아닌 클라이언트의 요청에 의해서<bena> 객체생성 
+
+ApplicationContext ( 즉시로딩방식 )
+
+- BeanFactory가 제공하는 <bean>객체 관리 기능 외에도 트랜잭션 관리포함
+- 컨테이너가 구동되는 시점에 <bean>등록된 클래스들을 객체 생성
+
+스프링 XML 설정
+
+<beans>
+
+ - <bean>**** --> <bean> 내부에 작성한 객체들을 컨테이너가 실행되었을 때 즉시 인스턴스 생성
+
+   ㄴ id[유일값] 속성은 생략할 수 있지만, class 속성은 필수
+   ㄴ id는 Java의 식별자 규칙을 Following
+   ㄴ name은 Java의 식별자 규칙을 따라가지 않고, 문자열 허용
+   ㄴ <bean> 태그내 init() method 작성가능 (해당class에 메서드 작성해야함)
+   ㄴ <bean> 태그내 destory() method 작성가능 (해당class에 메서드 작성해야함)
+
+ - <import>
+
+   ㄴ 하나의 설정파일에 전부 정의할 수 없으니 여러개 설정 파일을 나누었을 떄 작성
+
+
