@@ -985,3 +985,25 @@ ApplicationContext ( 즉시로딩방식 )
    ㄴ 하나의 설정파일에 전부 정의할 수 없으니 여러개 설정 파일을 나누었을 떄 작성
 
 
+bean의 scope 속성을 singleton으로 작성 시 인스턴스 생성을 1번만 생성
+만약, singleton이 아닌 prototype 작성 시 요청할 때 마다 객체가 생성되어야함
+
+scope의 기본값이 singleton이기 때문에 prototype으로 작성하지 않으면 객체를 한번만 생성함
+
+인스턴스가 만들어지면 default 생성자 호출
+
+싱글톤은 한번 만들어진 주소를 공유해서 사용
+
+<bean> scope 속성의 기본 값은 singleton
+
+스프링의 가장 큰 특징은 ioc
+
+a class가 b class에 의존적이면 a class에 인스턴스를 외부에서 주입해줄 수 있다.
+
+ioc 의 형태 2가지
+
+- Dependency Lookup
+- Dependency lnjection *** (DI) 의존성 주입 중요!!!!!!
+
+
+
