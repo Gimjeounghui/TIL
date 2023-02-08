@@ -1005,5 +1005,7 @@ ioc 의 형태 2가지
 - Dependency Lookup
 - Dependency lnjection *** (DI) 의존성 주입 중요!!!!!!
 
+DI!!!!!!!!!!!!!
+
 
 
