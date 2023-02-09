@@ -1,4 +1,4 @@
-공부를 시작하기 전에 이모저모
+공부를 시작하기 전
 
 요즘 개발의 postion이 Front-end 와 Back-end로 나뉘어지는데 이전에는 Full Stack (CSS를 제외한 Front 단 [ js/jQuery ] 부터 Back단 [ Java Business Logic & DB ]) 이였다.
 최근에는 view.js, react, Angular로 알 수 있듯이 Front와 Back이 명확하게 갈리는 추세
