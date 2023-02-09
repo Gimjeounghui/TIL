@@ -1,3 +1,37 @@
+공부를 시작하기 전에 이모저모
+
+요즘 개발의 postion이 Front-end 와 Back-end로 나뉘어지는데 이전에는 Full Stack (CSS를 제외한 Front 단 [ js/jQuery ] 부터 Back단 [ Java Business Logic & DB ]) 이였다.
+최근에는 view.js, react, Angular로 알 수 있듯이 Front와 Back이 명확하게 갈리는 추세
+
+js(javascript) = jquery : javascript를 간결하게 쓸 수 있는 언어
+
+“프론트언어”
+
+js를 기반으로 만들어진 언어
+
+react 
+view
+angular
+
+프로젝트 환경설정 하는 Framework
+
+- Spring
+- Springboot
+- 스트럿츠
+
+SpringFramework 경량화 -> Springboot
+
+#사용하는 Framework가 다름
+#전체적인 프로젝트 구조
+#어떤방식으로 환경세팅
+#Java & Javascript 어떻게 구조화 시킬건지
+
+유니코드
+
+MyBatis/ibatis vs jpa 
+sql을 연결하는 프레임워크
+
+
 Day_1 : 2022-12-28
 
 교육원에서 USE CASE 다이어그램을 배우고 실습했다.
@@ -901,7 +935,7 @@ pom.xml ( Project Object Model )
       maven은 커멘드를 사용하여 간단히 프로젝트를 만들거나 빌드 가능
       maven의 강점은 다양한 라이브러리와 프레임워크 등 이용하는 경우 maven이 관리. 이러한 프로젝트 관리를 하기 위해서 maven 명령을 실행하는 것으로 끝나지 않고, 프로젝트를 관리하고 있는 빌드파일에 대한 이해필요
 
-      https://araikuma.tistory.com/447
+      
 
 
 
@@ -1009,7 +1043,100 @@ DI!!!!!!!!!!!!!
 
 Day_44 : 2023-02-09
 
+Java 코드 변경 없이 설정파일로 인스턴스 생성 가능
+
+의존성을 주입하는 방법 
+
+- 생성자(default, 매개변수 있는 생성자)
+- 설정자(생정자는 default)
+
+보통 메서드를 호출할 때 사용하는 속성은 <property>
+
+<property>는 <bean> 태그 안에 작성해야 하는 이유 ?
+   ㄴ property에서 메서드를 호출할 때 참조변수.method로 호출하기 때문에 <property>내에 작성된 참조변수 명이 없으므로 <bean>태그 안에 명시해야 한다.
+   ㄴ setProperty로 설정할 대상이 참조형이라면 ref=" "
+   ㄴ setProperty로 설정할 대상이 기본형이라면 valeu=" "
+
+   Java 코드로 new 연산자로 인스턴스를 생성하지 않고, 설정파일을 통해 생성자, 설정자를 통해 인스턴스를 외부에서 넣는 것이 주입이다
+
+   네임스페이스
+
+   -
+
+   컬렉션 객체 설정 
+   
+   - set
+                                          <!-- default 생성자  -->
+                               <!-- default 생성자를 통해 인스턴스 생성 -->
+   <bean id="collectionBean" class="com.spring.injection.CollectionBean">
+      <!--set property -->
+      <property name="addressList">
+                      <!-- 필드 -->
+         <list>
+            <!-- value = String형 -->
+            <value>서울시 강남구 역삼동</value> 
+            <value>서울시 영등포구 당산6가</value>
+         </list>
+      </property>
+   </bean>
+
+   ==> 외부로부터 주입할 준비완료! 이제 실행(Java 코드 이동)에 가서 코드 변경
+
+list는 값에 접근할 때 index로 접근하고, set은 집합적 구조 자료형이기 떄문에 
+
+lterator
+
+- Java Collection에 존재하는 값으 읽어오기 위한 방법
+- lterator class : 해당 Collection의 주솟값을 기반으로 하나씩 값을 조회하는 클래스
+- 대표적으로 hashNext(), next()
+- hashNext() : 다음 값을 갖고 있는지 true / false 반환
+- next() : 다음 값으로 이동 및 변환 
+- Java에서 각 Collection 별로 Iterator를 반환하는 함수를 갖고 있음
+- Iterator은 Collection의 1번째 주소값을 반환하는 형식
+- Iterator를 이용해 Collection을 추출하는 방법 : '1번째 주소를 답은 Iterator 생성'-> 반복문을 통해 하나씩 이동하며 저장된 값 반환
+
+Iterator<String> setter = hSet.iterator(); // 만든hSet의 iterator 정보를 담은 setter 변수 생성(hSet 자료형과 동일하게 생성)
+   while(setter.hashNext()) { // 값이 존재할 때 까지 반복
+
+      String str1 = setIter.next(); // hSet의 다음 값 가져오기
+      Systems.out.println(str + "");
+
+}
+
+SpringFramework 객체 생성 방법
 
 
+- XML 파일 <bean> 속성 작성
+- annotation 명시
 
+** 둘다 인스턴스 생성 시 default 생성자 호출 **
 
+XML 파일 <bean> 속성 작성
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+실행할 클래스의 패키지의 인스턴스 생성을 위한 설정파일을 항상 패키지 마다 만들어야 하는지?
+기존의 pom.xml에 작성하면 안되는건지?
+pom.xml <project> 태그 내에 작성하면 안되는건지?
+해당 패키지 및 클래스 내에서만 사용할 인스턴스 이기 때문에 새롬 만든 xml에 작성해야 하는지?
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+annotation 명시
+
+- annotation 설정추가 시 <beans>에 context 관련 네임스페이스와 스키마 문서위치 등록
+   ㄴ Namespaces 탭 선택 후 context 항목 체크
+
+- @Component("ID명")
+- <context:component-scan /> 요소의 base-package 속성
+   ㄴ <context:component-scan base-package="추가할 패키지명" />
+
+- 설정파일(Java 단) 클래스들을 <bean> 등록
+
+직접 만든 클래스들을 어노테이션으로 객체를 생성할 수 있지만, 외부에서 가져온 라이브러리는 XML 사용 
+( <bean>으로 설정 ) 
+
+@Component를 상속받아 확장한 annotaion
+
+- @Controller
+- @Service
+- @Repository
+   ㄴ 요즘은 dao 구현 클래스가 자동으로 생성되는 추세라서 해당 annotaion은 잘 사용하지 않음
