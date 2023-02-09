@@ -288,20 +288,15 @@ JSON & XML
 2. XML은 XML parse(), JSON은 JS의 표준함수인 eval()함수로 parsing
 
 XML 예제
-<dog>
-    <name>별이</name>
-    <family>웰시코기</family>
-    <age>3</age>
-    <weight>3.6</weight>
-</dog>
+<Framework>
+    <name>Spring</name>
+    <version>3.0</version>
+</Framework>
 
 JSON 예제
 {
-    "name" : "별이",
-    "family" : "웰시코기",
-    "age" : 3,
-    "weight" : 3.6
-
+    "name" : "spring",
+    "version" : 3.0
 }
 
 JSON의 사용 범위
