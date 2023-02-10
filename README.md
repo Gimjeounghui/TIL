@@ -1138,6 +1138,36 @@ annotation 명시
 
 Spring 프로젝트 신규생성(springPractice)
 
+
 Day_45 : 2023-02-10
 
+- 이전 코딩(Spring을 사용하지 않았을 때)
+
+@RequestMapping("/test/basic")
+public String basic(HttpServletRequest request) {
+
+   String word = request.getParameter("word");
+
+}
+
+- Spring을 사용할 때(annotation 지원)
+public String basic(@RequestParam("word") String word)
+
+- method의 괄호안에 작성한 매개변수는 인스턴스가 만들어졌다는 의미
+ex) public void test (HttpServletRequest request) {
+
+   참조변수 a에 저장할 name값을 request 객체를 사용해서 얻어옴 == 메서드 괄호 안에서 인스턴스 생성이 완료되었다는 의미
+
+   String a = request.getParameter("name");
+}
+
+annotation 중 @ResponseBody
+
+@ResponseBody
+
+- 메서드를 통해 return 할 값이 view(사용자한테 보여줄 jsp)가 아닌 실제 data 값일 때 사용
+
+@RequestBody 
+
+- 클라이언트가 요청한 타입이 JSON일 경우 반환하는 타입이 VO, MAP 타입일 때 사용
 
