@@ -1137,3 +1137,7 @@ annotation 명시
    ㄴ 요즘은 dao 구현 클래스가 자동으로 생성되는 추세라서 해당 annotaion은 잘 사용하지 않음
 
 Spring 프로젝트 신규생성(springPractice)
+
+Day_45 : 2023-02-10
+
+
