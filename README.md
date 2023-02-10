@@ -1170,4 +1170,3 @@ annotation 중 @ResponseBody
 @RequestBody 
 
 - 클라이언트가 요청한 타입이 JSON일 경우 반환하는 타입이 VO, MAP 타입일 때 사용
-
