@@ -1170,3 +1170,49 @@ annotation 중 @ResponseBody
 @RequestBody 
 
 - 클라이언트가 요청한 타입이 JSON일 경우 반환하는 타입이 VO, MAP 타입일 때 사용
+
+
+Day_48 : 2023-02-13
+
+MyBatis Framework ( 연속성 프레임워크 )
+
+- Java의 관계형 데이터베이스(RDBMS) 프로그래밍을 좀 더 쉽게 할 수 있도록 도와주는 개발 프레임워크
+- XML 구문과 annotation을 사용한 SQL문이나 저장된 프로시저를 데이터베이스와 자바 등 연결시켜주는 역할
+
+
+Spring과 MyBatis-Spring을 연동한 데이터에 대한 흐름
+
+                                  [            MyBatis          ]
+- Controller -> Service(Logic) -> Mapper(=DAO) -> Mapper XML 구문 -> DataBase
+- Controller : Spring 구성요소로 Service Logic으로부터 데이터를 전달받음
+- Service(Logic) : JavaBean 구성, 데이터베이스 검색 및 관리
+- Mapper : Interface로 선언 후 구현 class에서 SQL문 실행
+- Mapper XML : Mapper XML요소와 SQL문으로 작성
+
+SQL Mapper XML 파일
+
+- DB연동에 필요한 SQL Query문 작성
+- 데이터베이스를 다루는 SQL문은 MyBatis가 제공하는 기능의 XML, annotation 통한 Mapper 기법으로 작성
+
+MyBatis Mapper XML 요소
+
+- mapper : 루트 엘리먼트
+- select : Mapping된 select문
+- insert : Mapping된 insert문
+- update : Mapping된 update문
+- delete : Mapping된 delete문
+
+select, insert, update, delete 공통 사용 속성
+
+- id : 필수속성. 전체 Mapper 파일들 내 유일한 값 설정
+- parameterType : SQL 실행에 필요한 데이터를 외부로부터 받아야 할 때 사용. 일반적으로 기본형이나 VO 형태의 클래스로 지정
+- parametMap : 외부 parameterMap을 찾기 위한 접근 방법 !! 비권장 !!
+- statementType : Statement, Prepared, Callable 중 선택. default = Prepared
+
+select 
+
+- 데이터를 검색하는 select 구문을 작성할 때 사용
+
+<select id="구분자" resultType="반환타입">
+   select 컬럼명1, 컬럼명2,...from 테이블명
+</select>
