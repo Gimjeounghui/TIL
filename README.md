@@ -1216,3 +1216,85 @@ select
 <select id="구분자" resultType="반환타입">
    select 컬럼명1, 컬럼명2,...from 테이블명
 </select>
+
+
+Day_49 : 2023-02-14
+
+SQL 구문 내 '<>'기호를 사용하면 에러발생
+CDATA Section으로 SQL 구문을 감싸주면 에러가 발생하지 않음
+select는 resultType이 반드시 있어야함
+
+CDATA Section은 XML 고유 문법으로 CDATA 영역에 작성된 데이터는 단순한 문자 데이터
+<![CDATA[ where num <= #{num} ]]>
+--> MtBatis는 <>을 문자로 인식 후 연산자로 인식
+
+동적 SQL
+
+- 하나의 SQL문을 다양한 형태로 실행하는 기능
+
+if (단일 조건문)
+
+- <if>요소는 test의 조건문이 참일 때 연결문자열을 SQL문에 연결하고, 거짓일 때는 실행되지 않는다. SQL문의 WHERE절의 포함 여부를 작성할 수 있다.
+
+-- 검색 시 사용하기에 용이 --
+
+표기법 : <if test="조건문">연결문자열</if>
+
+choose, when, otherwise (복수 조건문)
+
+trim, where, set(update 문에서 사용)
+
+where
+
+SQL문 내에서 기술한 <where>---</where>내의 조건의 모두 참이 되지 않을 경우 <where>---</where>의 모든 문자열을 제거
+
+if문 안에 where절을 작성할 수도 있지만 코드의 중복으로 인해 바깥에 작성
+
+조건이 1개 일때는 where만 있으면 되는데 조건이 2개 이상일 때는 and, or 명시
+
+trim
+
+<trim prefix="WHERE" prefixOverrides="AND | OR">---</trim>
+
+- and, or 연산자가 제거될 수 있도록 사용
+ 
+ trim 엘리먼트 속성
+
+ - prefix
+ - prefixOverrides
+ - suffix
+ - suffixOverrides
+
+ foreach
+
+ MyBatis의 XML 파일은 최상위 루트 <mapper>
+
+<if test="title != null">
+   AND TITLE LIKE #{TITLE}
+   AND TITLE LIKE '%' || #{TITLE} || '%' --> 해당구문이 좀 더 정확함
+
+</if>
+
+Spring에서 Ioc를 지원하는 방법 
+
+1) Dependency Lookup
+2) Depenndenct Injection
+
+Dependency Injection 
+
+1) Setter Injection
+2) Constructor Injection
+
+생성자 인젝션을 위해서는 <bean> 등록 설정에서 시작태그와 종료태그 사이에 <constructor-arg> 엘리먼트를 추가, 그리고 생성자 인자로 전달할 객체의 id를 <constructor-arg> 엘리먼트에 ref속성으로 참조
+
+xml파일추가를 위한 Eclipes Marketplaces에서 MyBatis 추가
+ 
+클래스간 결합도를 낮추기 위한 방법 
+
+- 다형성 (인터페이스)
+- 디자인패턴 (Factory 패턴)
+
+
+Day_50 : 2023-02-15
+
+Spring을 기반으로 한 mvc 패턴 프로젝트를 진행 중 JUit 실행 시 DB로부터 정보를 가져오지 못해서 오류를 해결하던 중 root-context.xml 파일에 log4j 작성을 logi4j로 작성하여 DB정보를 불러오지 못했던 것이다. 시퀀스 생성 여부가 오류 원인인 줄 알았는데 해결해서 너무 뿌듯하다! 
