@@ -1300,3 +1300,25 @@ Day_50 : 2023-02-15
 Spring을 기반으로 한 mvc 패턴 프로젝트를 진행 중 JUit 실행 시 DB로부터 정보를 가져오지 못해서 오류를 해결하던 중 root-context.xml 파일에 log4j 작성을 logi4j로 작성하여 DB정보를 불러오지 못했던 것이다. 시퀀스 생성 여부가 오류 원인인 줄 알았는데 해결해서 너무 뿌듯하다! 
 
 이클립스내 소스코드에 오류가 없을 때 프로젝트가 오류표시등이 생긴다면 Maven을 업데이트 하면 된다!
+
+
+Day_51 : 2023-02-16
+
+rootContext의 thin:@인데 thin@이렇게 작성했었다..
+
+* 최초실행이라면 eclipes marketplace에서 sts 다운로드
+! 지원하는 버전이 다른 부분 확인 !
+Spring 프로젝트 생성(legacy project) -> 프로젝트명 & MVC 패턴 -> Package (최소)3 depth 결정 -> JDK 버전변경 -> POM.XML(의존성 관리) -> WEB.XML -> LOG4J == 설정파일 완료 후 ==
+DB(TABLE 생성) -> VO 생성 -> DAO(interface)[interface를 만들면 xml을 만들 수 있음(MyBatis xml Mapper)] -> XML파일에서 작성할 parameterType과 resultType은 Full Name을 작성해야 하기 떄문에 MyBatis-config-xml 별칭작업 -> XML(interface에서 사용할 Query문 작성 파일) // 기본적으로 DB사용할 세팅 완료 -> src/test/java 해당 경로에서 xml에 작성한 Query문 test 진행. 단, class명은 상이해도 되지만 Test하고자 하는 메서드가 작성된 interface와의 패키지 경로가 동일해야함. 패키지명이 다르면 오류발생 -> Service & ServiceImpl. ServiceImpl 클래스에서 가장먼저 @Service 어노테이션 명시 후 Dao가 필요하기 때문에 Dao를 필드로 가짐(생성자 Injection을 통해 자동주입) -> Controller // 브라우저로 요청할 수 있음. Controller 단에서 Model을 매개변수로 가지고 jsp로 이동 -> jsp(Controller단에서 Model 속성값으로 전달한 값을 JSP에 Core로 뿌려줌)
+
+
+jsp 페이지가 아닌 Mapping 요청 시에는 request
+
+Controller단에서 return 값과 tiles xml파일의 name 값이 동일해야 한다!
+jsp에서 taglib 속성은 include를 제외한 다른 방법에서는 적용되지 않는다. 예를 들면 tiles.xml의 value 값으로 전달한 페이지에 작성한 속성처럼!
+결론, taglib 속성은 실행하는 jsp파일 혹은 include하는 파일에서만 적용되는 점을 확인한다.
+
+url 요청-> Controller -> service -> dao -> DB
+DB -> Service -> dao -> Controller(return) -> tiles(value) -> 해당 jsp 페이지를 컴퓨터가 읽으면서 화면에 그림! 
+
+common.jspf / contentLayout.jsp 2페이지가 비슷한 기능같은데 common.jspf 코드를 contentLayout.jsp 페이지로 옮겨도 되지 않을까?-- 강사님께 확인--
