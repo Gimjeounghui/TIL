@@ -1343,6 +1343,7 @@ Day_54 : 2023-02-19
 
 
 
+
 Day_55 : 2023-02-20
 
 Spring에서 자동주입을 할 수 있는 방법은 필드, 생성자, 설정자 총 3가지에 주는 방법이 있지만, Spring에서 권장하는 방법은 생성자로 생성하는 방법 
@@ -1357,3 +1358,41 @@ oracle 연결 시 2가지로 나뉠 수 있음
 - SID       : 11g 이상 URL작성 시 -> :sid
 
 現기준 oracle version : 21 > 18(사용중인 버전) > 12c
+
+INSERT, UPDATE, DELETE는 resultType 속성을 사용할 수 없음
+이유는 반환타입이 적용된 행의 갯수 즉, int타입으로 정해져있기 때문
+
+MyBatis의 동적 SQL 처리문
+
+- if
+- choose(when, otherwise)
+   ㄴ where문 내 작성한 if문이 하나도 만족하지 않을 때는 쿼리문이 where로 종료되기 때문에 에러 발생하므로 where을 <where> 요소로 작성 -> if문이 만족할 땐 where, if문이 만족하지 않을 땐 <where>
+- trim (where, set)
+- foreach
+
+Null제어, 별칭, 데이터베이스 연동
+
+MyBatis 내 "<" 기호를 사용 시 종료태그로 인식하므로 CDATA Section 사용
+
+* 참고 : RedirectAttributes 객체는 리다이렉트 시점(return "redirect:/경로")에 
+	 * 한번만 사용되는 데이터를 전송할 수 있는 addFlashAttribute()라는 기능을 지원한다. 
+	 * addFlashAttribute() 메서드는 브라우저까지 전송되기는 하지만, URI상에는 보이지 않는 숨겨진 데이터의 형태로 전달된다.
+
+    Dao -> xml(method == id) -> 단위테스트(정상처리 여부확인)
+    xml select -> parameterType : 있을 수도 있고, 없을 수도 있고
+                  resultType : 생략 불가능(결과를 받아올 타입이 있어야만 정상처리 가능)
+
+         insert
+         update -> parameterType : 생략 불가능
+         delete    resultType : 이미 정수형으로 지정되어 있음     
+
+         service interface는 있을 수도 있고, 없을 수도 있다. 이유는 dao와 거진 비슷하기 때문에 재사용할 가능성도 있음
+
+DB로부터 받아온 값을 전달할 때는 VO
+
+Requst.getParameter 
+@ModelAttribute
+
+==> SampleController 확인
+
+xml 설정파일 Query문의 요소 resultType, parameterType의 전체 name에 대한 별칭을 줄 때는 MyBatis 설정파일에서 변경
