@@ -1321,4 +1321,26 @@ jsp에서 taglib 속성은 include를 제외한 다른 방법에서는 적용되
 url 요청-> Controller -> service -> dao -> DB
 DB -> Service -> dao -> Controller(return) -> tiles(value) -> 해당 jsp 페이지를 컴퓨터가 읽으면서 화면에 그림! 
 
-common.jspf / contentLayout.jsp 2페이지가 비슷한 기능같은데 common.jspf 코드를 contentLayout.jsp 페이지로 옮겨도 되지 않을까?-- 강사님께 확인--
+
+Day_52 : 2023-02-17
+
+Java 예외처리 자동 리소스 닫기
+try-with-resources (파일해지, 네트워크 연결 종료, 데이터베이스 연결 종료)
+
+예외발생 여부와 상관 없음
+try-catch-resources 문장은 문장의 끝에서 리소스들이 자동으로 닫혀 지게 한다.
+즉, 사용했던 리소스 객체의 close()메서드를 호출해 리소스를 닫는다.
+
+springProject에서 localhost:8080 요청 시 home.jsp가 나오는데 직접 만든 index.html페이지를 보여주려면 어떻게 해야하는지
+
+boardList화면에서 글쓰기 버튼 눌렀을 때 writeForm으로 이동하는 jQuery 작성에 오류가 없었는데 개발자도구로 확인하면 network에서 아무 기능이 적용되지 않아서 boardList.jsp에 include 되어진 common.jspf를 확인하던 중 하단 script 태그에 jquery-3.6.2.min.js 중 .js가 작성되지 않아서 적용되지 않았었다. 확장자까지 명시 후 재실행 하니 제대로 작동되었다!
+
+반복문은 id말고 class 설정 권장
+
+
+Day_54 : 2023-02-19
+
+
+
+
+Day_55 : 2023-02-20
