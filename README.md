@@ -1341,9 +1341,6 @@ boardList화면에서 글쓰기 버튼 눌렀을 때 writeForm으로 이동하�
 Day_54 : 2023-02-19
 
 
-
-
-
 Day_55 : 2023-02-20
 
 Spring에서 자동주입을 할 수 있는 방법은 필드, 생성자, 설정자 총 3가지에 주는 방법이 있지만, Spring에서 권장하는 방법은 생성자로 생성하는 방법 
@@ -1396,3 +1393,15 @@ Requst.getParameter
 ==> SampleController 확인
 
 xml 설정파일 Query문의 요소 resultType, parameterType의 전체 name에 대한 별칭을 줄 때는 MyBatis 설정파일에서 변경
+
+
+Day_56 : 2023-02-21
+
+형상관리 (svn, git)
+
+프로젝트 설정(프로젝트명, 패키지, 경로, path, 각 분담파트) 후 index.html 파일 확인ㅏ더 -> git, svn upload -> 접속 id, pw 부여할 수 있음 -> 개발자 url 접근 시 해당 id, pw 입력 -> source code 다운 -> 타인 update, 본인 commit(comment) -> 싱크로나이즈(동기화)
+
+Form 안에 input이 1개면 enter값이 submit 기능을 수행하기 떄문에 enter값 제어를 해주어야함!
+javascript는 java처럼 타입에 대해 엄격하지 않기 때문에 === 3개 일때는 값과 타입(자료형)을 모두 비교할 수 있는 연산자
+
+
