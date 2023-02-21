@@ -1404,4 +1404,18 @@ Day_56 : 2023-02-21
 Form 안에 input이 1개면 enter값이 submit 기능을 수행하기 떄문에 enter값 제어를 해주어야함!
 javascript는 java처럼 타입에 대해 엄격하지 않기 때문에 === 3개 일때는 값과 타입(자료형)을 모두 비교할 수 있는 연산자
 
+MyBatis는 sqlsession 객체 필요 -> sqlsession객체를 얻으려면 sqlsessionFactory 필요
 
+- query > update 형식 확인 -
+
+UPDATE [테이블명]
+SET 컬럼1 = '값1', 컬럼2 = '값2'
+WHERE 조건 = 조건값
+
+
+jQuery each구문 하위 요소들을 반복하는 함수
+
+Uncaught TypeError: item.val is not a function
+   ㄴ 함수를 찾을 수 없는 경우
+   ㄴ 함수명이 태그id, name와 동일하거나 함수 내 오류가 발생하는 코드
+   ㄴ 함수명을 겹치지 않게 사용
