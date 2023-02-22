@@ -1448,3 +1448,5 @@ ORACLE에서 PLSQL을 사용하면 반복문을 사용할 수 있음
 PAGING 처리 시 ROWNUM이 필요!
 
 정렬된 데이터 카운트를 하기위해 INLINE VIEW 필요
+
+페이징처리는 Logic이기 때문에 개발자가 고민해야 하는 부분
