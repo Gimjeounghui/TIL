@@ -1419,3 +1419,32 @@ Uncaught TypeError: item.val is not a function
    ㄴ 함수를 찾을 수 없는 경우
    ㄴ 함수명이 태그id, name와 동일하거나 함수 내 오류가 발생하는 코드
    ㄴ 함수명을 겹치지 않게 사용
+
+Day_57 : 2023-02-22
+
+오라클 데이터베이스 페이징 처리
+
+인덱스
+
+서브쿼리는 3가지로 나뉘어질 수 있음
+
+- single row subquery
+- scalar subquery
+- inline view 
+   ㄴ 데이터를 조회하기 위한 작업, 데이터 가공 쿼리 작성 시 오류발생(EX.FORMAT)
+
+서브쿼리는 괄호로 묶어지는데 우선순위를 가짐
+
+rownum -> 내부적인 칼럼 레코드가 insert 될때 마다 count
+rowid -> 식별자로 만들어진 인덱스
+
+full scan / index
+order by는 데이터가 많을 때 성능의 문제가 생김 따라서, index 활용
+
+inner, outjoin 한번 더 확인
+
+ORACLE에서 PLSQL을 사용하면 반복문을 사용할 수 있음 
+
+PAGING 처리 시 ROWNUM이 필요!
+
+정렬된 데이터 카운트를 하기위해 INLINE VIEW 필요
