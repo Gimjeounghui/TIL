@@ -1471,3 +1471,47 @@ list에서 작은 이미지를 보여주고, 상세페이지에서 원본 크기
 서버 외부 모듈 추가(이미지 업로드)
 
 db저장확인여부, 저장경로에 저장된 파일 저장여부(thumbnail, 원본 2가지 버전 다 들어가야함), 화면단 확인 여부!
+
+의존성 주입 방법 3가지 (DI)
+
+- 필드객체에 의존성 주입
+
+   @Autowired
+   private Speaker speaker
+
+- 생성자로 의존성 주입
+
+   private Speaker speaker;
+   
+   @Autowired
+   public LgTV(Speaker speaker) {
+
+      this.speaker = speaker;
+    }
+
+- 설정자로 의존성 주입
+    
+    private Speaker speaker;
+
+    @Autowired
+    public void setSpeaker(Speaker speaker) {
+
+      this.speaker = speaker;
+    
+    }
+
+   Controller 단 기본구조
+   @Controller
+   public class 컨트롤러명 {
+
+      @RequestMapping("요청url패턴")
+      public 반환타입 메서드명 (Modle 파라미터명---) {
+
+         비즈니스 로직;
+
+         return 뷰명;
+      
+      }
+   }
+
+   resultSet & resultMap
