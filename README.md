@@ -1420,6 +1420,7 @@ Uncaught TypeError: item.val is not a function
    ㄴ 함수명이 태그id, name와 동일하거나 함수 내 오류가 발생하는 코드
    ㄴ 함수명을 겹치지 않게 사용
 
+
 Day_57 : 2023-02-22
 
 오라클 데이터베이스 페이징 처리
@@ -1515,3 +1516,6 @@ db저장확인여부, 저장경로에 저장된 파일 저장여부(thumbnail, �
    }
 
    resultSet & resultMap
+
+
+   Day_59 : 2023-02-24
