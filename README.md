@@ -1559,3 +1559,7 @@ jsp:include -> board와 reply에 대한 java 파일을 만드는 방법이 actio
 reply.jsp에서 crud 처리가 모두 처리되어야 함
 
 ajax에서 확장된 함수의 개념 getJSON : 타입에 대한 얘기를 하지 않아도됨
+
+dataType
+
+Controller단에서 추가했던 어노테이션 추가 공부
