@@ -1557,3 +1557,5 @@ boaedDetail.jsp에서 상단에 page디렉티브는 별도의 servlet을 생성�
 jsp:include -> board와 reply에 대한 java 파일을 만드는 방법이 action
 
 reply.jsp에서 crud 처리가 모두 처리되어야 함
+
+ajax에서 확장된 함수의 개념 getJSON : 타입에 대한 얘기를 하지 않아도됨
