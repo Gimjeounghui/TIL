@@ -1602,8 +1602,25 @@ restController일 때는 jsp문서가 없어도 API(많은 활용!)로 메서드
 + 확장
 파일업로드 가능 게시판
 
+댓글쪽 페이징 처리
+현재 입력, 수정, 삭제만 기능 구현
 
+수정된 데이터를 다시불러오고, 삭제가 된 데이터가 바로바로 삭제가 된 상태에서 list가 확인되어야함
 
+JoinPoint는 Target 객체가 가진 메서드
+Pointcut은 관심사와 비즈니스 로직이 결합되는 지점을 결정하는 것. 관심사를 결합할 것인지를 결정 : Pointcut
+
+Advice는 실제 공통 기능의 코드를 의미한다.
+
+Advice 동작 위치에 따라 구분
+
+- Before Advice
+- After Returning Advice
+- After Throwing Advice
+- After Advice
+- Around
+
+AOP는 핵심로직이 수행되기 전에 기능을 수행할 수 있다.
 
 
 
