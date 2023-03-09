@@ -1665,3 +1665,8 @@ SpringFramework는 - src/main/java
 Spring에선 legacy 프로젝트로 생성했지만  SpringBoot는 Spring Starter Project로 생성
 
 설치한 툴은 jsp문서를 지원하지 않기 때문에 Spring 코드를 그대로 가져오려면 Eclipes > MarketPlace에서 java and web 검색 후 [캡쳐화면 확인]을 설치해야 한다.
+
+SpringBoot는 자동으로 서버를 on/off 하기 떄문에 개발자가 실행을 하지 않아도 된다.
+ㄴ 실행 버튼을 누르게 되면 에러가 난다.
+
+SpringBoot는 Tomcat을 내장하고 있기 때문에 server 탭이 확인되지 않는다.
