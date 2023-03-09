@@ -1635,6 +1635,33 @@ Day_69 : 2023-03-06
 
 회원의 정보가 필요한 다른 Controller단에서 session값을 얻어올 때 사용할 수 있는 코드 복습
 
+Day_72 : 2023-03-09
 
 
+웹 개발 -> mvc 패턴 -> spring(기본 툴 제공) -> 환경설정(xml 파일설정多) -> 클래스별 어노테이션(component 확장) -> component는 servlet-context.xml에 명시 -> IOC / AOP -> POM.XML
+                                               ㄴ 각 클래스마다 인스턴스를 생성하지 않아도 됨
 
+AOP를 설정하면 얻을 수 있는 이점 
+Service는 로직처리를 위한 클래스 인데 데이터를 가져왔는지 
+
+
+- 스프링프레임워크를 부트로 가져오는 법
+- jsp가 아닌 다른 파일로 보여주는 법
+- db작업을 jpa로 하는 방법
+
+
+mvc 패턴을 기반으로 web 개발을 할 때 사용하는 SpringFrameWork는 기본 툴을 제공한다.
+환경설정을 해야 하는 작업이 많지만 이점은 클래스마다 인스턴스 생성 작업을 하지 않아도 된다.
+따라서, 우리는 component의 확장개념인 @Controller, @Service를 작성했고, MyBatis는 DAO(=Mapper)의 구현클래스를 자동생성해주기 때문에 따로 annotation을 작성하지 않았다.
+component는 servlet-context.xml에 <context:component-scan base-package="com.spring.**"> 이와 같이 작성하였다.
+
+프레임워크는 항상 구조먼저 확인해야 한다.
+SpringFramework는 - src/main/java
+                  - src/main/resources
+                  - webapp 
+                           - resources : 동적
+                           - WEB-INF 
+
+Spring에선 legacy 프로젝트로 생성했지만  SpringBoot는 Spring Starter Project로 생성
+
+설치한 툴은 jsp문서를 지원하지 않기 때문에 Spring 코드를 그대로 가져오려면 Eclipes > MarketPlace에서 java and web 검색 후 [캡쳐화면 확인]을 설치해야 한다.
