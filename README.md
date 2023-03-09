@@ -1662,6 +1662,9 @@ SpringFramework는 - src/main/java
                            - resources : 동적
                            - WEB-INF 
 
+
+폴더 생성 후 
+
 Spring에선 legacy 프로젝트로 생성했지만  SpringBoot는 Spring Starter Project로 생성
 
 설치한 툴은 jsp, html 문서를 지원하지 않기 때문에 Spring 코드를 그대로 가져오려면 Eclipes > MarketPlace에서 java and web 검색 후 [캡쳐화면 확인]을 설치해야 한다.
@@ -1670,3 +1673,21 @@ SpringBoot는 자동으로 서버를 on/off 하기 떄문에 개발자가 실행
 ㄴ 실행 버튼을 누르게 되면 에러가 난다.
 
 SpringBoot는 Tomcat을 내장하고 있기 때문에 server 탭이 확인되지 않는다.
+
+프레임워크 설치 후 환경설정 진행한다.(카페 설치방법 참조)
+
+lombok은 실행가능한 .jar파일
+
+실제 이클립스에 넣은 것이 아닌 실행 후 이클립스에서 인식가능 하도록 하기 위한 작업
+cmd 창을 통한 lombok 설치 lombok 실행이 필요한 파일 경로를 추가 후 설치
+설치완료 후 cmd 창은 하단으로 커서 이동 후 lombok 실행을 하기 위한 폴더에서 lombok을 확인할 수 있음
+
+다운로드 받았던 파일들의 경로접근을 용이하게 하기 위해서 Temp라는 폴더로 관리
+
+lombok 작업을 완료 해야 어노테이션에 setter, getter, data 등 작성 시 오류 발생하지 않음
+
+스프링부트를 사용할 준비 완료!
+
+의존성에 대한 설정 : maven, Gradle
+
+의존성(라이브러리)에 나와있는 내용은 설정에 다 작성되어 있어야 하기 때문에 DB작업은 추후에 작성한다.
