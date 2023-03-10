@@ -1694,3 +1694,33 @@ lombok 작업을 완료 해야 어노테이션에 setter, getter, data 등 작�
 
 
 Day_73 : 2023-03-10
+
+SpringBoot > src/main/resources > static : 정적(html, css, jsp)
+
+servlet-context.xml
+ㄴ spring mvc 설정에 필요한 내용 작성
+
+root-context.xml
+ㄴ DB작업에 필요한 설정 작성
+
+SpringBoot는 main method가 있는 클래스가 있음
+
+관리자 상세 페이지는 댓글에 대해서 입력, 수정, 삭제, 조회가 같이 이루어지기 떄문에 Detail과 Reply를 같은 화면에 만들어도 괜찮음
+
+xml에서 쿼리 작성 시 받아오는 필드 소문자로 작성
+
+@SpringBootApplication 어노테이션은 
+                       
+                        - @SpringBootConfiguration
+                        - @EnableAutoConfiguration
+                        - @ComponentScan
+
+상단 3개의 어노테이셔을 합쳐 놓은 구성이다.             
+
+Boot는 jsp 실행에 대해 지원하지 않기 때문에 별도의 설치를 해주어야 한다.
+
+spring-boot-starter는 필요한 의존성이 여러개인(ex.MyBatis(MyBatis, SpringMyBatis)) 내용을 모듈로 제공
+
+spring-boot는 버전을 따로 명시하지 않아도 됨
+
+
