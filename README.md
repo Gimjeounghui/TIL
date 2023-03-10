@@ -1723,4 +1723,8 @@ spring-boot-starter는 필요한 의존성이 여러개인(ex.MyBatis(MyBatis, S
 
 spring-boot는 버전을 따로 명시하지 않아도 됨
 
+Controller 어노테이션 중 RestController는 ResponseBody + Controller가 합쳐진 형태의 어노테이션
+
+Controller 상단에 RestConotrller가 붙으면 해당 Controller는 retrun에 view단이 없고, 단순 데이터 반환을 나타낸다.(test : 확장 API 활용)
+
 
